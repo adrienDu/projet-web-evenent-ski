@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/snowflakeicon.png">
+    <title>Ski event | Formulaire</title>
+
+    <!-- Bootstrap 3 -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <!--GoggleWebFonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
+    <!-- Frontawesome -->
+    <script src="https://use.fontawesome.com/dffe9d8685.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" media="all">
+</head>
+<body>
+<div class="container-fluid background-home">
+    <div class="row">
+        <div class="col-xs-12 fontform background-black">
+            <h1 class="titleform"> Formulaire d'inscription pour le voyage au SKI 2017 </h1>
+            <p class="presform"> Afin de nous rejoindre dans ce magnifique voyage au ski, nous aurions besoin de
+                quelques informations
+                sur
+                toi. Merci de prendre le temps de remplir ce formulaire, tu recevera un mail de confirmation avec toutes
+                les
+                infos necessaires.</p>
+            <h2 class="presform">Pour commencer on a besoin de savoir qui tu es :</h2>
+
+            <div class="styleform">
+
+                <form  action="form.php" method="post">
+                    <!-- Nom -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform" for="nom">Ton Nom :</label>
+                            <input type="text" class="form-control" id="nom" name="nom">
+                        </div>
+                    </div>
+
+                    <!-- Prenom -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform" for="prenom">Prenom :</label>
+                            <input type="text" class="form-control" id="prenom" name="prenom">
+                        </div>
+                    </div>
+
+                    <!-- Date naissance -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform">Ta date de naissance (seules les personnes majeures
+                                peuvent se joindre a l'aventure):</label>
+                            <label class="intform" for="journais">Jour :</label>
+                            <select class="form-control" id="journais" name="journais">
+                                <option></option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                            <label class="intform" for="moisnais">Mois :</label>
+                            <select class="form-control" id="moisnais" name="moisnais">
+                                <option></option>
+                                <option>Janvier</option>
+                                <option>Février</option>
+                                <option>Mars</option>
+                                <option>Avril</option>
+                                <option>Mai</option>
+                                <option>Juin</option>
+                                <option>Juillet</option>
+                                <option>Aout</option>
+                                <option>Septembre</option>
+                                <option>Octobre</option>
+                                <option>Novembre</option>
+                                <option>Décembre</option>
+                            </select>
+                            <label class="intform" for="annais">Année :</label>
+                            <select class="form-control" id="annais" name="annais">
+                                <option></option>
+                                <option>1985</option>
+                                <option>1986</option>
+                                <option>1987</option>
+                                <option>1988</option>
+                                <option>1989</option>
+                                <option>1990</option>
+                                <option>1991</option>
+                                <option>1992</option>
+                                <option>1993</option>
+                                <option>1994</option>
+                                <option>1995</option>
+                                <option>1996</option>
+                                <option>1997</option>
+                                <option>1998</option>
+                                <option>1999</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Sexe -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform">Sexe :</label>
+                            <div class="radio">
+                                <label><input type="radio" name="sexe">Homme</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="sexe">Femme</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mail -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform" for="mail">Mail :</label>
+                            <input type="email" class="form-control" id="mail" name="mail">
+                        </div>
+                    </div>
+
+                    <!-- Tel -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform" for="tel">Telephone :</label>
+                            <input type="tel" class="form-control" id="tel" name="tel">
+                        </div>
+                    </div>
+
+                    <!-- addresse -->
+                    <!-- rue-->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform" for="adresse">Rue :</label>
+                            <input type="text" class="form-control" id="adresse" name="rue">
+                        </div>
+                    </div>
+                    <!-- CP-->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform" for="cp">Code postale :</label>
+                            <input type="text" class="form-control" id="cp" name="cp">
+                        </div>
+                    </div>
+                    <!-- Ville-->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform" for="ville">Ville :</label>
+                            <input type="text" class="form-control" id="ville" name="ville">
+                        </div>
+                    </div>
+
+                    <!-- Ski Snow -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform">Avec quoi tu glisses ?</label>
+                            <div class="radio">
+                                <label><input type="radio" name="glisse">Ski</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="glisse">Snow</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chaussure -->
+                    <div class="form-group">
+                        <label class="intform" for="tChaussures">Pointure :</label>
+                        <select class="form-control" id="tChaussures" name="pointure">
+                            <option></option>
+                            <option>33</option>
+                            <option>34</option>
+                            <option>35</option>
+                            <option>36</option>
+                            <option>37</option>
+                            <option>38</option>
+                            <option>39</option>
+                            <option>40</option>
+                            <option>41</option>
+                            <option>42</option>
+                            <option>43</option>
+                            <option>44</option>
+                            <option>45</option>
+                            <option>46</option>
+                        </select>
+                    </div>
+
+                    <!-- taille-->
+                    <div class="form-group">
+                        <label class="intform" for="taille">Taille :</label>
+                        <select class="form-control" id="taille" name="taille">
+                            <option></option>
+                            <option value="1,55">155cm</option>
+                            <option value="1,6">160cm</option>
+                            <option value="1,7">170cm</option>
+                            <option value="1,75">175cm</option>
+                            <option value="1,8">180cm</option>
+                            <option value="1,85">185cm</option>
+                            <option value="1,9">190cm</option>
+                            <option value="1,95">195cm</option>
+                            <option value="2">200cm</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Niveau -->
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label class="intform">Niveau :</label>
+                            <div class="radio">
+                                <label><input type="radio" name="niveau">Débutant</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="niveau">Intermédiaire</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="niveau">Expert</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Validation Formulaire -->
+                    <div class="btncenter style-bottom">
+                        <input class="btn btn-default" type="submit" value="Envoyer !">
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

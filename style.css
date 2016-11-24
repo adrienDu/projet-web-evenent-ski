@@ -1,0 +1,201 @@
+/*HOME*/
+.box {
+    min-height: 100vh;
+}
+
+.background-home {
+    position: relative;
+    background: url("images/background1.jpg") top center no-repeat fixed;
+    background-size: cover;
+}
+
+.box-home {
+    text-align: center;
+    background-color: rgba(0, 0, 0, .6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.style-home {
+    position: relative;
+    margin-top: 5%;
+}
+
+#nom-home {
+
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+#desc-home {
+    color: rgba(255, 255, 255, .7);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
+
+}
+
+#border-home {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/*STYLES DE MISE EN PAGE*/
+
+/*espace fin section (Profil, Education, Internship, Skill & Job)*/
+.style-bottom {
+    padding-bottom: 40px;
+}
+
+/*Style tab/div (Education, Internship & Job)*/
+.tab-top {
+    margin-top: 20px;
+}
+
+/* ORGANISATION */
+.titlewhite{
+    color: black;
+    font-size: 26px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    border-bottom: 2px solid black;
+    margin-top: 50px;
+}
+
+.txt-orga{
+    text-align: center;
+}
+.title-orga{
+    color: black;
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+.stitle-orga{
+    color: black;
+    font-size: 14px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+.desc-orga{
+    font-size: 14px;
+    color: #494949;
+    font-family: 'Muli', Arial, sans-serif;
+}
+
+/*PLANNING*/
+.background-black {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.titleblack{
+    color: white;
+    font-size: 26px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    border-bottom: 2px solid white;
+    margin-top: 50px;
+}
+
+ul {
+    list-style:none;
+    margin-left:0;
+    padding-left:0;
+}
+
+.title-plan{
+    text-align: center;
+    color: white;
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+.desc-plan{
+    text-align: center;
+    font-size: 14px;
+    color: #e1e1e1;
+    font-family: 'Muli', Arial, sans-serif;
+}
+
+/*Intérressé ? */
+.title-int{
+    text-align: center;
+    color: black;
+    font-size: 23px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+}
+
+.btn-int{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.btncenter{
+    text-align: center;
+}
+
+/* PAGE FORMULAIRE */
+.styleform{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.titleform{
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.presform{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.fontform{
+    font-size: 14px;
+    color: white;
+    font-family: 'Muli', Arial, sans-serif;
+}
+
+.intform{
+    color: white;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
