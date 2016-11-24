@@ -1,0 +1,17 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IntelliJ generated files #
+############################
+.idea
+.idea/copyright/profiles_settings.xml
+.idea/deployment.xml
+*.xml
+.idea/projet-web-ski.iml
