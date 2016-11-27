@@ -1,5 +1,5 @@
 <?php
-
+require_once ("bdd.php");
 //var_dump($_GET);
 //var_dump(isset($_GET['nom']));
 
@@ -32,20 +32,22 @@ if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['nais']) || emp
             }
         }
     }
-   /* $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $nais = $_POST['nais'];
-    $sexe = $_POST['sexe'];
-    $mail = $_POST['mail'];
-    $tel = $_POST['tel'];
-    $rue = $_POST['rue'];
-    $cp = $_POST['cp'];
-    $ville = $_POST['ville'];
-    $glisse = $POST['glisse'];
-    $pointure = $_POST['pointure'];
-    $taille = $_POST['taille'];
-    $niveau = $_POST['niveau'];
-   */
+    $nom = $_GET['nom'];
+    $prenom = $_GET['prenom'];
+    $nais = $_GET['nais'];
+    $sexe = $_GET['sexe'];
+    $mail = $_GET['mail'];
+    $tel = $_GET['tel'];
+    $nrue = $_GET['nrue'];
+    $rue = $_GET['rue'];
+    $cp = $_GET['cp'];
+    $ville = $_GET['ville'];
+    $glisse = $_GET['glisse'];
+    $pointure = $_GET['pointure'];
+    $taille = $_GET['taille'];
+    $niveau = $_GET['niveau'];
+
+    newInsc($nom,$prenom,$nais,$sexe,$mail,$tel,$nrue,$rue,$cp,$ville,$glisse,$pointure,$taille,$niveau);
 
 }
 
