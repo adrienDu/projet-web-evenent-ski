@@ -7,5 +7,6 @@
  */
 require('bdd.php');
 //getAll();
-getAllWaiting();
-
+setUserValid('ca6cc450-b4c4-11e6-b354-5c514fc8d9f7');
+setAllValidUser();
+echo 'toto';
