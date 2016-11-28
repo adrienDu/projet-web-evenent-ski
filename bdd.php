@@ -65,23 +65,23 @@ function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $numRue, $rue, $C
     //preparation de la requete
     $query = $bdd->prepare('INSERT INTO inscription(`idInscript`, `nom`, `prenom`, `dateNais`, `sexe`, `mail`, `tel`, `numRue`, `rue`, `CP`, `ville`, `glisse`, `pointure`, `taille`, `niveau`, `etatInscription`, `dateInscription`) VALUES (:idInscript,:nom,:prenom,:dateNais,:sexe,:mail,:tel,:numRue,:rue,:CP,:ville,:glisse,:pointure,:taille,:niveau,:etatInscription,:dateInscription)');
     $query->execute(array(
-        `idInscript` => $id,
-        `nom` => $nom,
-        `prenom` => $prenom,
-        `dateNais` => $dateNais,
-        `sexe` => $sexe,
-        `mail` => $mail,
-        `tel` => $tel,
-        `numRue` => $numRue,
-        `rue` => $rue,
-        `CP` => $CP,
-        `ville` => $ville,
-        `glisse` => $glisse,
-        `pointure` => $pointure,
-        `taille` => $taille,
-        `niveau` => $niveau,
-        `etatInscription` => $etatInscription,
-        `dateInscription` => $dateInscription
+        'idInscript' => $id,
+        'nom' => $nom,
+        'prenom' => $prenom,
+        'dateNais' => $dateNais,
+        'sexe' => $sexe,
+        'mail' => $mail,
+        'tel' => $tel,
+        'numRue' => $numRue,
+        'rue' => $rue,
+        'CP' => $CP,
+        'ville' => $ville,
+        'glisse' => $glisse,
+        'pointure' => $pointure,
+        'taille' => $taille,
+        'niveau' => $niveau,
+        'etatInscription' => $etatInscription,
+        'dateInscription' => $dateInscription
     ));
 }
 
