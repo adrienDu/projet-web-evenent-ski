@@ -98,15 +98,15 @@ function getAll()
     $data = $bdd->query('SELECT * FROM inscription');
     while ($donnees = $data->fetch()) {
         //On affiche l'id et le nom du client en cours
-        echo "</TR>";
-        echo "<TH> $donnees[idInscript] </TH>";
-        echo "<TH> $donnees[nom] </TH>";
-        echo "<TH> $donnees[prenom] </TH>";
-        echo "<TH> $donnees[dateNais] </TH>";
-        echo "<TH> $donnees[sexe] </TH>";
-        echo "<TH> $donnees[mail] </TH>";
-        echo "<TH> $donnees[tel] </TH>";
-        echo "</TR>";
+        echo "</tr>";
+        echo "<th> $donnees[idInscript] </th>";
+        echo "<th> $donnees[nom] </th>";
+        echo "<th> $donnees[prenom] </th>";
+        echo "<th> $donnees[dateNais] </th>";
+        echo "<th> $donnees[sexe] </th>";
+        echo "<th> $donnees[mail] </th>";
+        echo "<th> $donnees[tel] </th>";
+        echo "</tr>";
         echo "<br />";
 
     }
@@ -119,26 +119,47 @@ function getAllWaiting()
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 0 ORDER BY dateInscription ASC');
     while ($donnees = $data->fetch()) {
         // echo \n;
-        echo "</TR>";
-        echo "<TH> $donnees[idInscript] </TH>";
-        echo "<TH> $donnees[nom] </TH>";
-        echo "<TH> $donnees[prenom] </TH>";
-        echo "<TH> $donnees[dateNais] </TH>";
-        echo "<TH> $donnees[sexe] </TH>";
-        echo "<TH> $donnees[mail] </TH>";
-        echo "<TH> $donnees[tel] </TH>";
-        echo "</TR>";
+        echo "</tr>";
+        echo "<th> $donnees[idInscript] </th>";
+        echo "<th> $donnees[nom] </th>";
+        echo "<th> $donnees[prenom] </th>";
+        echo "<th> $donnees[dateNais] </th>";
+        echo "<th> $donnees[sexe] </th>";
+        echo "<th> $donnees[mail] </th>";
+        echo "<th> $donnees[tel] </th>";
+        echo "</tr>";
         echo "<br />";
     }
 }
-//recuperer valid
 
-//recuperer refusé
 
 //valid user
-function set
+function setUserValid($uuid){
+    $bdd = connectBDD();
+    $query = $bdd->prepare('UPDATE inscription SET	etatInscription=1  WHERE idInscript = :id');
+    $query->execute(array('id' => $uuid));
+
+}
 
 //refuse user
-
+function setUserUnvalid($uuid){
+    $bdd = connectBDD();
+    $query = $bdd->prepare('UPDATE inscription SET	etatInscription=2  WHERE idInscript = :id');
+    $query->execute(array('id' => $uuid));
+}
+//recuperer valid
+function setAllValidUser(){
+    $bdd = connectBDD();
+    $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 1 ORDER BY dateInscription ASC');
+    return $data;
+}
+//recuperer refusé
+function setAllUnvalidUser(){
+    $bdd = connectBDD();
+    $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 2 ORDER BY dateInscription ASC');
+    return $data;
+}
 //modifier user
+function modifyUser(){
 
+}
