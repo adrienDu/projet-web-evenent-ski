@@ -47,6 +47,7 @@ if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['nais']) || emp
     $taille = $_GET['taille'];
     $niveau = $_GET['niveau'];
 
+    echo $nais;
     newInsc($nom,$prenom,$nais,$sexe,$mail,$tel,$nrue,$rue,$cp,$ville,$glisse,$pointure,$taille,$niveau);
 
 }
