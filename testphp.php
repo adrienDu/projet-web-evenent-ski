@@ -6,5 +6,6 @@
  * Time: 18:18
  */
 require('bdd.php');
-getAll();
+//getAll();
+getAllWaiting();
 

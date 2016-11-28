@@ -5,39 +5,33 @@
  * Date: 26/11/2016
  * Time: 11:48
  */
-
-function connectBDD()
+//creation d'un uuid unique pour les utilisateurs
+function uuid()
 {
-    try {
-        $bdd = new PDO('mysql:host=localhost;dbname=projetski;charset=utf8', 'root', '');
-    } catch (Exeption $e) {
-        die('Erreur : ' . $e->getMessage());
-    }
-    return $bdd;
+    //create random number
+    do {
+        $cstrong = true;
+        $bytes = openssl_random_pseudo_bytes(4, $cstrong);
+        $uuid = bin2hex($bytes) . "-";
+
+        $bytes = openssl_random_pseudo_bytes(2, $cstrong);
+        $uuid = $uuid . bin2hex($bytes) . "-";
+
+        $bytes = openssl_random_pseudo_bytes(2, $cstrong);
+        $uuid = $uuid . bin2hex($bytes) . "-";
+
+        $bytes = openssl_random_pseudo_bytes(2, $cstrong);
+        $uuid = $uuid . bin2hex($bytes) . "-";
+
+        $cstrong = true;
+        $bytes = openssl_random_pseudo_bytes(6, $cstrong);
+        $uuid = $uuid . bin2hex($bytes);
+    } while (checkUUID($uuid));
+
+    return $uuid;
 }
 
-function getAll()
-{
-    $bdd = connectBDD();
-    $data = $bdd->query('SELECT * FROM inscription');
-    while ($donnees = $data->fetch()) {
-        //On affiche l'id et le nom du client en cours
-        echo "</TR>";
-        echo "<TH> $donnees[idInscript] </TH>";
-        echo "<TH> $donnees[nom] </TH>";
-        echo "<TH> $donnees[prenom] </TH>";
-        echo "<TH> $donnees[dateNais] </TH>";
-        echo "<TH> $donnees[sexe] </TH>";
-        echo "<TH> $donnees[mail] </TH>";
-        echo "<TH> $donnees[tel] </TH>";
-
-
-        echo "</TR>";
-
-
-    }
-}
-
+//verification de l'uuid dans la bdd
 function checkUUID($uuid)
 {
     $bdd = connectBDD();
@@ -50,6 +44,18 @@ function checkUUID($uuid)
     }
 }
 
+//connection a la bdd
+function connectBDD()
+{
+    try {
+        $bdd = new PDO('mysql:host=localhost;dbname=projetski;charset=utf8', 'root', '');
+    } catch (Exeption $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+    return $bdd;
+}
+
+//creation d'un nouvel utilisateur
 function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $numRue, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau)
 {
     //connection a la bdd
@@ -85,27 +91,54 @@ function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $numRue, $rue, $C
     ));
 }
 
-function uuid()
+//recuperation de tous les utilisateurs de la base de donnée
+function getAll()
 {
-    //create random number
-    do {
-        $cstrong = true;
-        $bytes = openssl_random_pseudo_bytes(4, $cstrong);
-        $uuid = bin2hex($bytes) . "-";
+    $bdd = connectBDD();
+    $data = $bdd->query('SELECT * FROM inscription');
+    while ($donnees = $data->fetch()) {
+        //On affiche l'id et le nom du client en cours
+        echo "</TR>";
+        echo "<TH> $donnees[idInscript] </TH>";
+        echo "<TH> $donnees[nom] </TH>";
+        echo "<TH> $donnees[prenom] </TH>";
+        echo "<TH> $donnees[dateNais] </TH>";
+        echo "<TH> $donnees[sexe] </TH>";
+        echo "<TH> $donnees[mail] </TH>";
+        echo "<TH> $donnees[tel] </TH>";
+        echo "</TR>";
+        echo "<br />";
 
-        $bytes = openssl_random_pseudo_bytes(2, $cstrong);
-        $uuid = $uuid . bin2hex($bytes) . "-";
-
-        $bytes = openssl_random_pseudo_bytes(2, $cstrong);
-        $uuid = $uuid . bin2hex($bytes) . "-";
-
-        $bytes = openssl_random_pseudo_bytes(2, $cstrong);
-        $uuid = $uuid . bin2hex($bytes) . "-";
-
-        $cstrong = true;
-        $bytes = openssl_random_pseudo_bytes(6, $cstrong);
-        $uuid = $uuid . bin2hex($bytes);
-    } while (checkUUID($uuid));
-
-    return $uuid;
+    }
 }
+
+//recuperation uniquement des utilisateurs non validés
+function getAllWaiting()
+{
+    $bdd = connectBDD();
+    $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 0 ORDER BY dateInscription ASC');
+    while ($donnees = $data->fetch()) {
+        // echo \n;
+        echo "</TR>";
+        echo "<TH> $donnees[idInscript] </TH>";
+        echo "<TH> $donnees[nom] </TH>";
+        echo "<TH> $donnees[prenom] </TH>";
+        echo "<TH> $donnees[dateNais] </TH>";
+        echo "<TH> $donnees[sexe] </TH>";
+        echo "<TH> $donnees[mail] </TH>";
+        echo "<TH> $donnees[tel] </TH>";
+        echo "</TR>";
+        echo "<br />";
+    }
+}
+//recuperer valid
+
+//recuperer refusé
+
+//valid user
+function set
+
+//refuse user
+
+//modifier user
+
