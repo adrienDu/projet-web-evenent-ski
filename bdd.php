@@ -56,7 +56,7 @@ function connectBDD()
 }
 
 //creation d'un nouvel utilisateur
-function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $numRue, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau)
+function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau)
 {
     //connection a la bdd
     $bdd = connectBDD();
@@ -69,7 +69,7 @@ function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $numRue, $rue, $C
 
 
     //preparation de la requete
-    $query = $bdd->prepare('INSERT INTO inscription(`idInscript`, `nom`, `prenom`, `dateNais`, `sexe`, `mail`, `tel`, `numRue`, `rue`, `CP`, `ville`, `glisse`, `pointure`, `taille`, `niveau`, `etatInscription`, `dateInscription`) VALUES (:idInscript,:nom,:prenom,:dateNais,:sexe,:mail,:tel,:numRue,:rue,:CP,:ville,:glisse,:pointure,:taille,:niveau,:etatInscription,:dateInscription)');
+    $query = $bdd->prepare('INSERT INTO inscription(`idInscript`, `nom`, `prenom`, `dateNais`, `sexe`, `mail`, `tel`, `rue`, `CP`, `ville`, `glisse`, `pointure`, `taille`, `niveau`, `etatInscription`, `dateInscription`) VALUES (:idInscript,:nom,:prenom,:dateNais,:sexe,:mail,:tel,:rue,:CP,:ville,:glisse,:pointure,:taille,:niveau,:etatInscription,:dateInscription)');
     $query->execute(array(
         'idInscript' => $id,
         'nom' => $nom,
@@ -78,7 +78,6 @@ function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $numRue, $rue, $C
         'sexe' => $sexe,
         'mail' => $mail,
         'tel' => $tel,
-        'numRue' => $numRue,
         'rue' => $rue,
         'CP' => $CP,
         'ville' => $ville,
