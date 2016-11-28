@@ -1,17 +1,16 @@
 <?php
-
+require('bdd.php');
 //var_dump($_GET);
 //var_dump(isset($_GET['nom']));
 $nais = $_GET['nais'];
 $bool = array(0, 1);
 $pointures = array(33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46);
 $taille = array(1.55, 1.60, 1.65, 1.70, 1.75, 1.80, 1.85, 1.9, 1.95, 2.0);
-$niveau = array(0, 1,2);
+$niveau = array(0, 1, 2);
 
 if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['nais']) || empty($_GET['sexe'])
     || empty($_GET['mail']) || empty($_GET['tel']) || empty($_GET['rue']) || empty($_GET['cp'])
-    || empty($_GET['ville']) || empty($_GET['glisse']) || empty($_GET['pointure']) || empty($_GET['taille'])
-    || empty($_GET['niveau'])
+    || empty($_GET['ville']) || empty($_GET['pointure']) || empty($_GET['taille'])
 ) {
     echo "Tous les champs n'ont pas été renseignés !";
 
@@ -48,12 +47,12 @@ if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['nais']) || emp
                                             echo "le niveau entré n'existe pas";
 
                                         } else {
+                                            newInsc($_POST['nom'], $_POST['prenom'], $_POST['nais'], $_POST['sexe'], $_POST['mail'], $_POST['tel'], $_POST['rue'], $_POST['CP'], $_POST['ville'], $_POST['glisse'], $_POST['pointure'], $_POST['taille'], $_POST['niveau']);
 
                                         }
                                     }
 
                                 }
-                                echo "OK";
                             }
                         }
                     }
@@ -63,7 +62,7 @@ if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['nais']) || emp
 
     }
 
-    /* $nom = $_POST['nom'];
+    /*$nom = $_POST['nom'];
      $prenom = $_POST['prenom'];
      $nais = $_POST['nais'];
      $sexe = $_POST['sexe'];
