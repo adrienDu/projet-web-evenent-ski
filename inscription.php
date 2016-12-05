@@ -27,7 +27,7 @@ $boolErr = false;
             ?>
             <div class="styleform">
 
-                <form action="" method="get">
+                <form action="form.php" method="get">
                     <!-- Nom -->
                     <div class="col-xs-12">
                         <div class="form-group">
@@ -189,10 +189,4 @@ $boolErr = false;
 </body>
 </html>
 <?php
-$erreurs = validForm();
-if (!isset($_get['send'])){
-
-    if (!isset($erreurs)){
-    }
-}
 

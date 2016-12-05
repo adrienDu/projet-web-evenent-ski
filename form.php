@@ -11,7 +11,7 @@ function validForm()
     $pointures = array(33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46);
     $taille = array(1.55, 1.60, 1.65, 1.70, 1.75, 1.80, 1.85, 1.9, 1.95, 2.0);
     $niveau = array(0, 1, 2);
-    $erreurs = array("");
+    $erreurs = array();
 
     if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['nais']) || empty($_GET['sexe'])
         || empty($_GET['mail']) || empty($_GET['tel']) || empty($_GET['rue']) || empty($_GET['cp'])
@@ -27,7 +27,7 @@ function validForm()
             if (!empty($nais)) {
                 array_push($erreurs, $nais);
             } else {
-                if (!in_array($_get['sexe'], $bool)) {
+                if (!in_array($_GET['sexe'], $bool)) {
                     array_push($erreurs, "le sexe entré n'est pas proposé");
                 } else {
                     if (!filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL)) {
@@ -66,7 +66,10 @@ function validForm()
             }
 
         }
-        return $erreurs;
+        echo $erreurs[0];
+        for($i=0;$i<=count($erreurs);$i++){
+            echo $erreurs[i];
+        }
     }
     /*$nom = $_POST['nom'];
      $prenom = $_POST['prenom'];
