@@ -2,8 +2,8 @@
 
 require('bdd.php');
 
-function validForm()
-{
+/*function validForm()
+{*/
 
     $bool = array(0, 1);
     $pointures = array(33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46);
@@ -64,11 +64,11 @@ function validForm()
             }
 
         }
-        return $erreurs;
 
+            //return $erreurs;
     }
-}
-
+//}
+echo "toto";
 
 function verifDate($date)
 {

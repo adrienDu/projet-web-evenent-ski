@@ -27,7 +27,7 @@ $boolErr = false;
             ?>
             <div class="styleform">
 
-                <form action="" method="get">
+                <form action="form.php" method="get">
                     <!-- Nom -->
                     <div class="col-xs-12">
                         <div class="form-group">
@@ -189,12 +189,15 @@ $boolErr = false;
 </body>
 </html>
 <?php
- if(!empty($_GET['submit'])) {
-     $erreur = validForm();
+/* if(!empty($_GET['submit'])) {
+     $erreur = array();
+     $erreur= validForm();
      for($i=0; $i<count($erreur);$i++ ){
-        echo $erreur[0];
+        echo $erreur[i];
      }
-     echo "erreur";
+     echo 'test';
 
  }
 
+*/
+?>
