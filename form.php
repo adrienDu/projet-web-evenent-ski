@@ -64,11 +64,23 @@ require('bdd.php');
             }
 
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> a373fba165e7e7cc33ee65565b23f9dcb14fbe2f
 
             //return $erreurs;
     }
+<<<<<<< HEAD
 //}
 echo "toto";
+=======
+    return $erreurs;
+
+
+}
+
+>>>>>>> a373fba165e7e7cc33ee65565b23f9dcb14fbe2f
 
 function verifDate($date)
 {

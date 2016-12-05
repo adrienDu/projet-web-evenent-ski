@@ -189,6 +189,7 @@ $boolErr = false;
 </body>
 </html>
 <?php
+<<<<<<< HEAD
 /* if(!empty($_GET['submit'])) {
      $erreur = array();
      $erreur= validForm();
@@ -196,7 +197,22 @@ $boolErr = false;
         echo $erreur[i];
      }
      echo 'test';
+=======
+ if(isset($_GET['submit'])) {
+     $erreur = validForm();
+     ?>
+     <div class="alert alert-danger">
+         <strong>Error!</strong></br> <a href="#" class="alert-link">
+>>>>>>> a373fba165e7e7cc33ee65565b23f9dcb14fbe2f
 
+<?php
+    for($i = 0; $i<count($erreur);$i++){
+        echo $erreur[$i];
+    }
+?>
+</a>
+     </div>
+<?php
  }
 
 */
