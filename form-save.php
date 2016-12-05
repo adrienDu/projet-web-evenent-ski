@@ -18,7 +18,7 @@ function validForm()
         array_push($erreurs, "Tous les champs n'ont pas été renseignés !");
 
     } else {
-        if (strlen($_POST['nom']) > 100 || strlen($_POST['prenom']) > 100) {
+        if (strlen($_GET['nom']) > 100 || strlen($_GET['prenom']) > 100) {
             array_push($erreurs, "Les noms ou prenoms saisis ne sont pas valides");
         } else {
             $nais = verifDate($_GET['nais']);
@@ -67,6 +67,20 @@ function validForm()
         return $erreurs;
 
     }
+    /*$nom = $_POST['nom'];
+     $prenom = $_POST['prenom'];
+     $nais = $_POST['nais'];
+     $sexe = $_POST['sexe'];
+     $mail = $_POST['mail'];
+     $tel = $_POST['tel'];
+     $rue = $_POST['rue'];
+     $cp = $_POST['cp'];
+     $ville = $_POST['ville'];
+     $glisse = $POST['glisse'];
+     $pointure = $_POST['pointure'];
+     $taille = $_POST['taille'];
+     $niveau = $_POST['niveau'];
+ */
 }
 
 
