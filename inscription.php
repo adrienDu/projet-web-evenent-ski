@@ -6,7 +6,7 @@
  * Time: 09:27
  */
 
-require_once ('head.php');
+include ('head.php');
 require_once ('form.php');
 $boolErr = false;
 ?>
@@ -27,7 +27,7 @@ $boolErr = false;
             ?>
             <div class="styleform">
 
-                <form action="form.php" method="get">
+                <form action="" method="get">
                     <!-- Nom -->
                     <div class="col-xs-12">
                         <div class="form-group">
@@ -189,4 +189,5 @@ $boolErr = false;
 </body>
 </html>
 <?php
-
+$erreur = validForm();
+echo $erreur[0];

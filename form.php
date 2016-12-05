@@ -4,9 +4,7 @@ require('bdd.php');
 
 function validForm()
 {
-//var_dump($_GET);
-//var_dump(isset($_GET['nom']));
-    $nais = $_GET['nais'];
+
     $bool = array(0, 1);
     $pointures = array(33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46);
     $taille = array(1.55, 1.60, 1.65, 1.70, 1.75, 1.80, 1.85, 1.9, 1.95, 2.0);
@@ -66,10 +64,8 @@ function validForm()
             }
 
         }
-        echo $erreurs[0];
-        for($i=0;$i<=count($erreurs);$i++){
-            echo $erreurs[i];
-        }
+        return $erreurs;
+
     }
     /*$nom = $_POST['nom'];
      $prenom = $_POST['prenom'];
