@@ -198,4 +198,8 @@ ul {
     font-family: 'Muli', Arial, sans-serif;
     text-transform: uppercase;
 }
-
+#stickyErreur{
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
