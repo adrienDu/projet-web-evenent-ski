@@ -185,7 +185,7 @@ $boolErr = false;
 if(isset($_GET['submit'])) {
     $erreur = validForm();
     ?>
-    <div class="alert alert-danger">
+    <div class="alert alert-danger" id="stickyErreur">
         <strong>Error!</strong></br> <a href="#" class="alert-link">
 
             <?php
