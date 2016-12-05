@@ -137,7 +137,6 @@ function setUserValid($uuid){
     $bdd = connectBDD();
     $query = $bdd->prepare('UPDATE inscription SET	etatInscription=1  WHERE idInscript = :id');
     $query->execute(array('id' => $uuid));
-
 }
 
 //refuse user
