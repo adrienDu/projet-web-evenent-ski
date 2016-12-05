@@ -161,7 +161,7 @@ function setAllUnvalidUser(){
 //modifier user
 function modifyUser($idInscript,$nom, $prenom, $dateNais, $sexe, $mail, $tel, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau, $etatInscription){
     $bdd = connectBDD();
-    $query = $bdd -> prepare('UPDATE `inscription` SET `nom`=:nom,`prenom`=:prenom,`dateNais`=:dateNais,`sexe`=:sexe,`mail`=:mail,`tel`=:tel,`rue`=:rue,`CP`=:CP,`ville`=:ville,`glisse`=:glisse,`pointure`=:pointure,`taille`=:taille,`niveau`=:niveau,`etatInscription`=:etatInscription WHERE idInscription LIKE :idInscript');
+    $query = $bdd -> prepare('UPDATE `inscription` SET `nom`=:nom,`prenom`=:prenom,`dateNais`=:dateNais,`sexe`=:sexe,`mail`=:mail,`tel`=:tel,`rue`=:rue,`CP`=:CP,`ville`=:ville,`glisse`=:glisse,`pointure`=:pointure,`taille`=:taille,`niveau`=:niveau,`etatInscription`=:etatInscription WHERE idInscript LIKE :idInscript');
     $query -> execute(array(
         'idInscript' => $idInscript,
         'nom' => $nom,
