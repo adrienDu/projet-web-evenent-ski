@@ -2,8 +2,8 @@
 
 require('bdd.php');
 
-/*function validForm()
-{*/
+function validForm()
+{
 
     $bool = array(0, 1);
     $pointures = array(33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46);
@@ -31,10 +31,10 @@ require('bdd.php');
                     if (!filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL)) {
                         array_push($erreurs, "L'adresse mail saisie n'est pas valide");
                     } else {
-                        if (!preg_match('`[0 - 9]{10}`', $_GET['tel']) || strlen($_GET['tel']) != 10) {
+                        if (!preg_match('[0 - 9]{10}', $_GET['tel']) || strlen($_GET['tel']) != 10) {
                             array_push($erreurs, "Le numéro de téléphone saisi n'est pas valide");
                         } else {
-                            if (!preg_match('`[0 - 9] {5}`', $_GET['cp']) || strlen($_GET['cp']) != 5) {
+                            if (!preg_match('[0 - 9] {5}', $_GET['cp']) || strlen($_GET['cp']) != 5) {
                                 array_push($erreurs, "Le code postal saisi n'est pas valide");
                             } else {
                                 if (!in_array($_GET['glisse'], $bool)) {
@@ -64,23 +64,14 @@ require('bdd.php');
             }
 
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> a373fba165e7e7cc33ee65565b23f9dcb14fbe2f
 
-            //return $erreurs;
     }
-<<<<<<< HEAD
-//}
-echo "toto";
-=======
     return $erreurs;
 
 
 }
 
->>>>>>> a373fba165e7e7cc33ee65565b23f9dcb14fbe2f
 
 function verifDate($date)
 {

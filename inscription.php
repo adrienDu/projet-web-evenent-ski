@@ -1,10 +1,5 @@
+
 <?php
-/**
- * Created by PhpStorm.
- * User: adrien
- * Date: 30/11/2016
- * Time: 09:27
- */
 
 include ('head.php');
 require_once ('form.php');
@@ -27,8 +22,8 @@ $boolErr = false;
             ?>
             <div class="styleform">
 
-                <form action="form.php" method="get">
-                    <!-- Nom -->
+                <form action="" method="get">
+                    <!— Nom —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="nom">Ton Nom :</label>
@@ -36,7 +31,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Prenom -->
+                    <!— Prenom —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="prenom">Prenom :</label>
@@ -44,7 +39,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Date naissance -->
+                    <!— Date naissance —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform">Ta date de naissance (seules les personnes majeures
@@ -53,7 +48,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Sexe -->
+                    <!— Sexe —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform">Sexe :</label>
@@ -66,7 +61,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Mail -->
+                    <!— Mail —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="mail">Mail :</label>
@@ -74,7 +69,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Tel -->
+                    <!— Tel —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="tel">Telephone :</label>
@@ -82,22 +77,22 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- addresse -->
-                    <!-- rue-->
+                    <!— addresse —>
+                    <!— rue-->
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="adresse">Adresse :</label>
                             <input type="text" class="form-control" id="adresse" name="rue">
                         </div>
                     </div>
-                    <!-- CP-->
+                    <!— CP-->
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="cp">Code postale :</label>
                             <input type="text" class="form-control" id="cp" name="cp">
                         </div>
                     </div>
-                    <!-- Ville-->
+                    <!— Ville-->
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="ville">Ville :</label>
@@ -105,7 +100,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Ski Snow -->
+                    <!— Ski Snow —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform">Avec quoi tu glisses ?</label>
@@ -118,7 +113,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Chaussure -->
+                    <!— Chaussure —>
                     <div class="form-group">
                         <label class="intform" for="pointure">Pointure :</label>
                         <select class="form-control" id="pointure" name="pointure">
@@ -140,7 +135,7 @@ $boolErr = false;
                         </select>
                     </div>
 
-                    <!-- taille-->
+                    <!— taille-->
                     <div class="form-group">
                         <label class="intform" for="taille">Taille :</label>
                         <select class="form-control" id="taille" name="taille">
@@ -157,9 +152,7 @@ $boolErr = false;
                             <option value="2">200cm</option>
                         </select>
                     </div>
-
-
-                    <!-- Niveau -->
+                    <!— Niveau —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform">Niveau :</label>
@@ -175,7 +168,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!-- Validation Formulaire -->
+                    <!— Validation Formulaire —>
                     <p>NB: Tous les champs sont obligatoires !</p>
                     <div class="btncenter style-bottom">
                         <input class="btn btn-default" type="submit" name="submit" value="Envoyer !">
@@ -189,31 +182,18 @@ $boolErr = false;
 </body>
 </html>
 <?php
-<<<<<<< HEAD
-/* if(!empty($_GET['submit'])) {
-     $erreur = array();
-     $erreur= validForm();
-     for($i=0; $i<count($erreur);$i++ ){
-        echo $erreur[i];
-     }
-     echo 'test';
-=======
- if(isset($_GET['submit'])) {
-     $erreur = validForm();
-     ?>
-     <div class="alert alert-danger">
-         <strong>Error!</strong></br> <a href="#" class="alert-link">
->>>>>>> a373fba165e7e7cc33ee65565b23f9dcb14fbe2f
+if(isset($_GET['submit'])) {
+    $erreur = validForm();
+    ?>
+    <div class="alert alert-danger">
+        <strong>Error!</strong></br> <a href="#" class="alert-link">
 
-<?php
-    for($i = 0; $i<count($erreur);$i++){
-        echo $erreur[$i];
-    }
-?>
-</a>
-     </div>
-<?php
- }
-
-*/
-?>
+            <?php
+            for($i = 0; $i<count($erreur);$i++){
+                echo $erreur[$i];
+            }
+            ?>
+        </a>
+    </div>
+    <?php
+}
