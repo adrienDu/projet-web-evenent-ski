@@ -189,12 +189,19 @@ $boolErr = false;
 </body>
 </html>
 <?php
- if(!empty($_GET['submit'])) {
+ if(isset($_GET['submit'])) {
      $erreur = validForm();
-     for($i=0; $i<count($erreur);$i++ ){
-        echo $erreur[0];
-     }
-     echo "erreur";
+     ?>
+     <div class="alert alert-danger">
+         <strong>Error!</strong></br> <a href="#" class="alert-link">
 
+<?php
+    for($i = 0; $i<count($erreur);$i++){
+        echo $erreur[$i];
+    }
+?>
+</a>
+     </div>
+<?php
  }
 

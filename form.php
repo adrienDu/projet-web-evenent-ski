@@ -64,9 +64,12 @@ function validForm()
             }
 
         }
-        return $erreurs;
+
 
     }
+    return $erreurs;
+
+
 }
 
 
