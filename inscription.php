@@ -192,6 +192,7 @@ if(isset($_GET['submit'])) {
             for($i = 0; $i<count($erreur);$i++){
                 echo $erreur[$i];
             }
+
             ?>
         </a>
     </div>
