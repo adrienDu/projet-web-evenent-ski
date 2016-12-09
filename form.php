@@ -11,9 +11,9 @@ function validForm()
     $niveau = array(0, 1, 2);
     $erreurs = array();
 
-    if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['nais']) || empty($_GET['sexe'])
+    if (empty($_GET['nom']) /*|| empty($_GET['prenom']) || empty($_GET['nais']) || empty($_GET['sexe'])
         || empty($_GET['mail']) || empty($_GET['tel']) || empty($_GET['rue']) || empty($_GET['cp'])
-        || empty($_GET['ville']) || empty($_GET['pointure']) || empty($_GET['taille'])
+        || empty($_GET['ville']) || empty($_GET['pointure']) || empty($_GET['taille'])*/
     ) {
         array_push($erreurs, "Tous les champs n'ont pas été renseignés !");
 
@@ -88,9 +88,9 @@ function verifAge($date)
     if ($date[0] > 1998) {
         return "vous êtes trop jeune";
     } elseif ($date[0] < 1986) {
+        //echo $date[0];
         return "Vous êtes trop vieux";
     } else return "";
-
 }
 
 ?>
