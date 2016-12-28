@@ -1,32 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!-- Icone -->
-    <link rel="icon" href="images/snowflakeicon.png">
-    <title>Ski event</title>
+<?php
+/**
+ * Created by PhpStorm.
+ * User: adrien
+ * Date: 27/12/16
+ * Time: 13:59
+ */
+include ('head.php');
+?>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" media="all">
-
-    <!-- Bootstrap 3 -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous"></script>
-
-    <!--GoggleWebFonts -->
-    <link href="https://fonts.googleapis.com/css?family=Muli|Open+Sans" rel="stylesheet">
-    <!-- Frontawesome -->
-    <script src="https://use.fontawesome.com/dffe9d8685.js"></script>
-
-</head>
 <body>
 
 <!-- Home -->
@@ -38,7 +19,7 @@
                     <h1 id="nom-home">Voyage au ski 2017</h1>
                     <p id="desc-home">Pour l'édition 2017 du voyage Ski, nous vous embarquons sur les pistes du Val
                         d'Arly en Haute Savoie.
-                        Au programme : ski, snow, fun, bierres et raclettes !!</p>
+Au programme : ski, snow, fun, bierres et raclettes !!</p>
                 </div>
                 <!-- fin row-->
             </div>

@@ -31,10 +31,15 @@ function validForm()
                 } else {
                     if (!filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL)) {
                         array_push($erreurs, "L'adresse mail saisie n'est pas valide");
+<<<<<<< HEAD
                     } if (checkmail($_GET['mail'])){
                        array_push($erreurs,"l'adresse email entré existe deja");
                     }  else{
                         if (!preg_match("#^0[1-8]([-. ]?[0-9]{2}){4}$#", $_GET['tel']) || strlen($_GET['tel']) != 10) {
+=======
+                    } else {
+                        if (!preg_match('[0-9]{10}', $_GET['tel']) || strlen($_GET['tel']) != 10) {
+>>>>>>> master
                             array_push($erreurs, "Le numéro de téléphone saisi n'est pas valide");
                         } else {
                             if (!preg_match('#^[0-9]{5}$#', $_GET['cp'])) {
@@ -75,11 +80,21 @@ function validForm()
 
 function verifDate($j, $m, $a)
 {
+<<<<<<< HEAD
 
     if (checkdate($m, $j, $a)) {
         return verifAge($a);
+=======
+    $dateDiv = explode("-", $date);
+    $valRetour = " ||date reçu : ".$date." |date div 0: ".$dateDiv[0]." | 1: ".$dateDiv[1]." |2: ".$dateDiv[2];
+
+    if (preg_match('#^([0-9]{4})([/-])([0-9]{2})\2([0-9]{2})$#', $date) == 1 && checkdate($dateDiv[2], $dateDiv[1], $dateDiv[0])) {
+        return $valRetour;
+
+        //        return verifAge($dateDiv);
+>>>>>>> master
     } else {
-        return "la date saisie n'est pas valide";
+        return "la date saisie n'est pas valide".$valRetour;
     }
 }
 
