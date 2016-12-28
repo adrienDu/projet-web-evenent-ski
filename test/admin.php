@@ -9,7 +9,7 @@ require('../bdd.php');
 include('../head.php');
 
 $data = getAllWaiting();
-$res =$data -> rowCount();
+$res = $data->rowCount();
 if ($res == 0){
     echo "<h1>Aucun utilisateurs en attente</h1>";
 }
@@ -85,22 +85,24 @@ else{
         <?php
         while ($donnee = $data->fetch()) {
             echo "</tr>";
-            echo "<td> $donnee[nom] </td>";
-            echo "<td> $donnee[prenom] </td>";
-            echo "<td> $donnee[dateNais] </td>";
-            echo "<td> " . valueSexe($donnee['sexe']) . "</td>";
-            echo "<td> $donnee[mail] </td>";
-            echo "<td> $donnee[tel] </td>";
-            echo "<td> $donnee[rue] </td>";
-            echo "<td> $donnee[CP] </td>";
-            echo "<td> $donnee[ville] </td>";
-            echo "<td>" . valueGlisse($donnee['glisse']) . "</td>";
-            echo "<td> $donnee[pointure] </td>";
-            echo "<td> $donnee[taille] </td>";
-            echo "<td>" . valueNiveau($donnee['niveau']) . "</td>";
+            echo "<td><input type='text' value='$donnee[nom] ' disabled> </td>";
+            echo "<td><input type='text' value='$donnee[prenom]' disabled> </td>";
+            echo "<td><input type='text' value='$donnee[dateNais]' disabled>  </td>";
+            echo "<td><input type='text' value='" . valueSexe($donnee['sexe']) . "' disabled> </td>";
+            echo "<td><input type='text' value='$donnee[mail] ' disabled> </td>";
+            echo "<td><input type='text' value='$donnee[tel] ' disabled> </td>";
+            echo "<td> <input type='text' value='$donnee[rue]' disabled> </td>";
+            echo "<td> <input type='text' value='$donnee[CP]' disabled> </td>";
+            echo "<td><input type='text' value='$donnee[ville]' disabled>  </td>";
+            echo "<td><input type='text' value='" . valueGlisse($donnee['glisse']) . "' disabled></td>";
+            echo "<td><input type='text' value='$donnee[pointure]' disabled>  </td>";
+            echo "<td><input type='text' value='$donnee[taille]' disabled>  </td>";
+            echo "<td><input type='text' value='" . valueNiveau($donnee['niveau']) . "' disabled></td>";
             echo "<td>" . valueEtatInscr($donnee['etatInscription']) . "</td>";
-            echo "<td> $donnee[dateInscription]</td>";
-            echo "<td>" . afficheButton($donnee['idInscript'], $donnee['etatInscription']) . "</td>";
+            echo "<td>$donnee[dateInscription]</td>";
+            echo "<td>" . afficheButton($donnee['idInscript'], $donnee['etatInscription']) . "<button type=\"button\" class=\"btn btn-info\">Info</button>
+
+</td>";
             echo "</tr>";
             echo "<br />";
         }
@@ -146,5 +148,11 @@ else{
     }
 
     ?>
+
+    <script type="text/javascript">
+        function modifier() {
+
+        }
+    </script>
 
 
