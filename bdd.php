@@ -95,20 +95,7 @@ function getAll()
 {
     $bdd = connectBDD();
     $data = $bdd->query('SELECT * FROM inscription');
-    while ($donnees = $data->fetch()) {
-        //On affiche l'id et le nom du client en cours
-        echo "</tr>";
-        echo "<th> $donnees[idInscript] </th>";
-        echo "<th> $donnees[nom] </th>";
-        echo "<th> $donnees[prenom] </th>";
-        echo "<th> $donnees[dateNais] </th>";
-        echo "<th> $donnees[sexe] </th>";
-        echo "<th> $donnees[mail] </th>";
-        echo "<th> $donnees[tel] </th>";
-        echo "</tr>";
-        echo "<br />";
-
-    }
+   return $data;
 }
 
 //recuperation uniquement des utilisateurs non validés
@@ -116,19 +103,13 @@ function getAllWaiting()
 {
     $bdd = connectBDD();
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 0 ORDER BY dateInscription ASC');
-    while ($donnees = $data->fetch()) {
-        // echo \n;
-        echo "</tr>";
-        echo "<th> $donnees[idInscript] </th>";
-        echo "<th> $donnees[nom] </th>";
-        echo "<th> $donnees[prenom] </th>";
-        echo "<th> $donnees[dateNais] </th>";
-        echo "<th> $donnees[sexe] </th>";
-        echo "<th> $donnees[mail] </th>";
-        echo "<th> $donnees[tel] </th>";
-        echo "</tr>";
-        echo "<br />";
-    }
+    return $data;
+}
+function getAllValidated()
+{
+    $bdd = connectBDD();
+    $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 1 ORDER BY dateInscription ASC');
+    return $data;
 }
 
 
@@ -146,13 +127,13 @@ function setUserUnvalid($uuid){
     $query->execute(array('id' => $uuid));
 }
 //recuperer valid
-function setAllValidUser(){
+function getAllValidUser(){
     $bdd = connectBDD();
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 1 ORDER BY dateInscription ASC');
     return $data;
 }
 //recuperer refusé
-function setAllUnvalidUser(){
+function getAllUnvalidUser(){
     $bdd = connectBDD();
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 2 ORDER BY dateInscription ASC');
     return $data;
@@ -178,4 +159,16 @@ function modifyUser($idInscript,$nom, $prenom, $dateNais, $sexe, $mail, $tel, $r
         'niveau' => $niveau,
         'etatInscription' => $etatInscription,
     ));
+}
+
+//verifier si un mail existe deja en bdd
+function checkmail($mail){
+    $bdd = connectBDD();
+    $query = $bdd->prepare('SELECT * FROM inscription WHERE mail = :mail');
+    $query->execute(array(':mail' => $mail));
+    if ($query->rowCount() > 0) {
+        return true;
+    } else {
+        return false;
+    }
 }

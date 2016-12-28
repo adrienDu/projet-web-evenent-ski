@@ -1,8 +1,7 @@
-
 <?php
 
-include ('head.php');
-require_once ('form.php');
+include('head.php');
+require_once('form.php');
 $boolErr = false;
 ?>
 <body>
@@ -17,9 +16,6 @@ $boolErr = false;
                 les
                 infos necessaires.</p>
             <h2 class="presform">Pour commencer on a besoin de savoir qui tu es :</h2>
-            <?php
-
-            ?>
             <div class="styleform">
 
                 <form action="" method="get">
@@ -41,10 +37,78 @@ $boolErr = false;
 
                     <!— Date naissance —>
                     <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="intform">Ta date de naissance (seules les personnes majeures
-                                peuvent se joindre a l'aventure) :</label>
-                            <input type="date" class="form-control" id="nais" name="nais" value="JJ/MM/AAAA">
+                        <label class="intform">Ta date de naissance (seules les personnes majeures
+                            peuvent se joindre a l'aventure) :</label>
+                        <div class="form-inline" style="margin-top: 10px; margin-left: 15px; margin-bottom: 15px">
+                            <label class="intform" for=""> Jour :</label>
+                            <select class="form-control" id="" name="jour">
+                                <option></option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+
+                            <label class="intform" style="margin-left: 15px">Mois:</label>
+                            <select class="form-control" id="" name="mois">
+                                <option></option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+
+                            <label class="intform" style="margin-left: 15px">Annee:</label>
+                            <select class="form-control" id="" name="annee">
+                                <option></option>
+                                <option value="1998">1998</option>
+                                <option value="1997">1997</option>
+                                <option value="1996">1996</option>
+                                <option value="1995">1995</option>
+                                <option value="1994">1994</option>
+                                <option value="1993">1993</option>
+                                <option value="1992">1992</option>
+                                <option value="1991">1991</option>
+                                <option value="1990">1990</option>
+                                <option value="1989">1989</option>
+                                <option value="1987">1987</option>
+                                <option value="1986">1986</option>
+                            </select>
                         </div>
                     </div>
 
@@ -53,7 +117,7 @@ $boolErr = false;
                         <div class="form-group">
                             <label class="intform">Sexe :</label>
                             <div class="radio">
-                                <label><input type="radio" name="sexe" value="0">Homme</label>
+                                <label><input type="radio" name="sexe" value="0" class="intform">Homme</label>
                             </div>
                             <div class="radio">
                                 <label><input type="radio" name="sexe" value="1">Femme</label>
@@ -140,16 +204,16 @@ $boolErr = false;
                         <label class="intform" for="taille">Taille :</label>
                         <select class="form-control" id="taille" name="taille">
                             <option></option>
-                            <option value="1,55">155cm</option>
-                            <option value="1,60">160cm</option>
-                            <option value="1,65">165cm</option>
-                            <option value="1,70">170cm</option>
-                            <option value="1,75">175cm</option>
-                            <option value="1,80">180cm</option>
-                            <option value="1,85">185cm</option>
-                            <option value="1,90">190cm</option>
-                            <option value="1,95">195cm</option>
-                            <option value="2">200cm</option>
+                            <option value="155">155cm</option>
+                            <option value="160">160cm</option>
+                            <option value="165">165cm</option>
+                            <option value="170">170cm</option>
+                            <option value="175">175cm</option>
+                            <option value="180">180cm</option>
+                            <option value="185">185cm</option>
+                            <option value="190">190cm</option>
+                            <option value="195">195cm</option>
+                            <option value="200">200cm</option>
                         </select>
                     </div>
                     <!— Niveau —>
@@ -182,19 +246,23 @@ $boolErr = false;
 </body>
 </html>
 <?php
-if(isset($_GET['submit'])) {
+if (isset($_GET['submit'])) {
     $erreur = validForm();
-    ?>
-    <div class="alert alert-danger" id="stickyErreur">
-        <strong>Error!</strong></br> <a href="#" class="alert-link">
+    if(!empty($erreur)) {
+        ?>
+        <div class="alert alert-danger" id="stickyErreur">
+            <strong>Error!</strong></br> <a href="#" class="alert-link">
 
-            <?php
-            for($i = 0; $i<count($erreur);$i++){
-                echo $erreur[$i];
-            }
+                <?php
+                for ($i = 0; $i < count($erreur); $i++) {
+                    echo $erreur[$i];
+                }
 
-            ?>
-        </a>
-    </div>
-    <?php
+                ?>
+            </a>
+        </div>
+        <?php
+
+    }
+    else echo "merci de vous être inscrit";
 }
