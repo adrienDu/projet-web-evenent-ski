@@ -1,11 +1,4 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: adrien
- * Date: 30/11/2016
- * Time: 09:29
- */
-?>
+
 <html lang="fr" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">

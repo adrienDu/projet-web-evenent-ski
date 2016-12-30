@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: adrien
- * Date: 27/12/16
- * Time: 13:59
- */
+
 include ('head.php');
 ?>
 
