@@ -48,7 +48,7 @@ function checkUUID($uuid)
 function connectBDD()
 {
     try {
-        $bdd = new PDO('mysql:host=localhost;dbname=projetski;charset=utf8', 'root', 'password');
+        $bdd = new PDO('mysql:host=localhost;dbname=projetski;charset=utf8', 'root', '');
     } catch (Exeption $e) {
         die('Erreur : ' . $e->getMessage());
     }
