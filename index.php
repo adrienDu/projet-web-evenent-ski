@@ -150,7 +150,7 @@ Au programme : ski, snow, fun, bierres et raclettes !!</p>
             <div class="col-xs-12 style-bottom background-black">
                 <!-- Titre Section -->
                 <div class=" col-xs-offset-1 col-sm-offset-1">
-                    <h2 class="titleblack">Contact</h2>
+                    <h2 class="titleblack">Contacts</h2>
                 </div>
             </div>
         </div>
