@@ -264,5 +264,14 @@ if (isset($_GET['submit'])) {
         <?php
 
     }
-    else echo "merci de vous être inscrit";
+    else {
+        ?>
+        <div class="alert alert-success" id="stickyErreur">
+            <strong>Merci de vous être inscrit a notre superbe voyage !</strong></br> <a href="#" class="alert-link">
+            </a>
+        </div>
+        <?php
+        header('Refresh: 2; URL=index.php');
+
+    }
 }
