@@ -5,7 +5,7 @@ include ('head.php');
 
 <body>
 
-<!-- Home -->
+<!-- Home -->e
 <section>
     <div class="background-home parallax-section" id="border-home">
         <div class="container-fluid">
