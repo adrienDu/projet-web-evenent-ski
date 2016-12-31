@@ -1,0 +1,27 @@
+.background-home {
+    position: relative;
+    background: url("../images/background1.jpg") top center no-repeat fixed;
+    background-size: cover;
+}
+.background-black {
+    text-align: center;
+    background-color: rgba(0, 0, 0, .7);
+}
+.title{
+    color: #ffffff;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+}
+.table {
+    white-space: nowrap;
+}
+.thstyle{
+    padding-top: 30px!important;
+}
+.entete{
+    color: #ffffff;
+    font-size: 10px;
+    font-family: 'Muli', Arial, sans-serif;
+    text-transform: uppercase;
+}
