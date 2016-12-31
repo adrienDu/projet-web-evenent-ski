@@ -138,6 +138,14 @@ function getAllUnvalidUser(){
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 2 ORDER BY dateInscription ASC');
     return $data;
 }
+
+//recuperer utilisateur par id
+
+function getUserById($id){
+    $bdd = connectBDD();
+    $query = $bdd->prepare('SELECT * FROM inscription WHERE idInscript = :idInscript');
+    $query->execute(array(':idInscript' => $id));
+}
 //modifier user
 function modifyUser($idInscript,$nom, $prenom, $dateNais, $sexe, $mail, $tel, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau, $etatInscription){
     $bdd = connectBDD();
