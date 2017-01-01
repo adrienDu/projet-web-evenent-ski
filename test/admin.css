@@ -16,6 +16,10 @@
 .table {
     white-space: nowrap;
 }
+.tablestyle{
+    font-size: 10px;
+    font-family: 'Muli', Arial, sans-serif;
+}
 .thstyle{
     padding-top: 30px!important;
 }
@@ -24,4 +28,13 @@
     font-size: 10px;
     font-family: 'Muli', Arial, sans-serif;
     text-transform: uppercase;
+}
+.tdstyle{
+    vertical-align:middle!important;
+}
+.whitefonttdstyle{
+    color: #ffffff;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Muli', Arial, sans-serif;
 }
