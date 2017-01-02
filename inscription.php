@@ -270,8 +270,7 @@ if (isset($_GET['submit'])) {
             </a>
         </div>
         <?php
-    }
-    /* OK */
+    } /* OK */
     else {
         ?>
         <div class="alert alert-success" id="stickyErreur">
