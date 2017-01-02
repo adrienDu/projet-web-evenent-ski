@@ -106,7 +106,7 @@ $app->post('/creer',function(Request $request) use ($app) {
     $dateInscription = date("Y-m-d");
     //etatInscription
     $etatInscription = 0;
-
+//dzgi
     $user = array(
         'idInscript' => $id,
             'nom' => $request->get('nom'),
