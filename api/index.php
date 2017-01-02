@@ -132,6 +132,7 @@ $app->post('/creer',function(Request $request) use ($app) {
 
 
 });
+
 // default route
 $app->get('/', function () {
     return "List of avaiable methods:

@@ -78,7 +78,8 @@ include('../head.php');
 
             <button type="button" class="btn btn-info">Tous</button>
             <button type="button" class="btn btn-success">Validés</button>
-            <button type="button" class="btn btn-danger">Refusés</button><br/><br/>
+            <button type="button" class="btn btn-danger">Refusés</button>
+            <br/><br/>
             <?php
             $data = getAll(); ?>
             <div class="table-responsive">
@@ -106,24 +107,24 @@ include('../head.php');
                     <?php
                     while ($donnee = $data->fetch()) {
                         echo " </tr > ";
-                        echo "<td class='tdstyle' ><input type = 'text' value = '$donnee[nom] ' disabled > </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '$donnee[prenom]' disabled > </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '$donnee[dateNais]' disabled >  </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '" . valueSexe($donnee['sexe']) . "' disabled > </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '$donnee[mail] ' disabled > </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '$donnee[tel] ' disabled > </td > ";
-                        echo "<td class='tdstyle'> <input type = 'text' value = '$donnee[rue]' disabled > </td > ";
-                        echo "<td class='tdstyle'> <input type = 'text' value = '$donnee[CP]' disabled > </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '$donnee[ville]' disabled >  </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '" . valueGlisse($donnee['glisse']) . "' disabled ></td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '$donnee[pointure]' disabled >  </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '$donnee[taille]' disabled >  </td > ";
-                        echo "<td class='tdstyle'><input type = 'text' value = '" . valueNiveau($donnee['niveau']) . "' disabled ></td > ";
-                        echo "<td class='tdstyle whitefonttdstyle'> " . valueEtatInscr($donnee['etatInscription']) . " </td > ";
-                        echo "<td class='tdstyle whitefonttdstyle'> $donnee[dateInscription]</td > ";
-                        echo "<td class='tdstyle'> " . afficheButton($donnee['idInscript'], $donnee['etatInscription']) . " <button type = \"button\" class=\"btn btn-info btn-xs\">Info</button>
-
-</td>";
+                        echo "<form action='' method='get''>";
+                        echo "<td class='tdstyle' style='display: none' ><input type = 'text' name='idInscript' value = '$donnee[idInscript] '  > </td > ";
+                        echo "<td class='tdstyle' ><input type = 'text' name='nom' value = '$donnee[nom] '  > </td > ";
+                        echo "<td class='tdstyle'><input type = 'text' name='prenom' value = '$donnee[prenom]'  > </td > ";
+                        echo "<td class='tdstyle'><input type = 'text' name='dateNais' value = '$donnee[dateNais]'  >  </td > "; //ne se modifie pas, a passer en type normal
+                        echo "<td class='tdstyle'><input type = 'text' name='sexe' value = '" . valueSexe($donnee['sexe']) . "' disabled > </td > "; //ne se modifie pas, a passer en type normal
+                        echo "<td class='tdstyle'><input type = 'text' name='mail'value = '$donnee[mail] '  > </td > ";
+                        echo "<td class='tdstyle'><input type = 'text' name='tel'value = '$donnee[tel] '  > </td > ";
+                        echo "<td class='tdstyle'> <input type = 'text' name='rue'value = '$donnee[rue]'  > </td > ";
+                        echo "<td class='tdstyle'> <input type = 'text' name='CP'value = '$donnee[CP]'  > </td > ";
+                        echo "<td class='tdstyle'><input type = 'text' name='ville'value = '$donnee[ville]'  >  </td > ";
+                        echo "<td class='tdstyle'><input type = 'text' name='glisse'value = '" . valueGlisse($donnee['glisse']) . "' disabled ></td > "; //reproduire selectValNiv en modifiant le contenue
+                        echo "<td class='tdstyle'><input type = 'text' name='pointure' value = '$donnee[pointure]'  >  </td > "; //reproduire selectValNiv en modifiant le contenue
+                        echo "<td class='tdstyle'><input type = 'text' name='taille' value = '$donnee[taille]'  >  </td > "; //reproduire selectValNiv en modifiant le contenue
+                        echo selectValNiv($donnee['niveau']);
+                        echo "<td class='tdstyle whitefonttdstyle'> " . valueEtatInscr($donnee['etatInscription']) . " <input name='etatInscription'type = 'text'  value = '$donnee[etatInscription] '  style='display:none'></td > ";
+                        echo "<td class='tdstyle whitefonttdstyle'> $donnee[dateInscription] <input name='dateInscrition'type = 'text'  value = '$donnee[etatInscription] ' style='display: none' ></td > ";
+                        echo "<td class='tdstyle'> " . afficheButton($donnee['idInscript'], $donnee['etatInscription']) . "</form><input type='submit' class='btn btn-info btn-xs'>Modifier</button></td>";
                         echo "</tr>";
                     }
                     ?>
@@ -148,6 +149,26 @@ include('../head.php');
                 if ($niveau == 0) return "debutant";
                 else if ($niveau == 1) return "intermediaire";
                 else return "expert";
+            }
+
+            function selectValNiv($niveau)
+            {
+                if ($niveau == 0) {
+                    return "<td class='tdstyle'><select class='form-control' id='niveau' name='niveau'>
+                            <option value=$niveau>" . valueNiveau($niveau) . "</option>
+                            <option value=1>Intermediaire</option>
+                            <option value=2>Expert</option></td > ";
+                } else if ($niveau == 1) {
+                    return "<td class='tdstyle'><select class='form-control' id='niveau' name='niveau'>
+                            <option value=$niveau>" . valueNiveau($niveau) . "</option>
+                            <option value=0>Debutant</option>
+                            <option value=2>Expert</option></td > ";
+                } else if ($niveau == 2) {
+                    return "<td class='tdstyle'><select class='form-control' id='niveau' name='niveau'>
+                            <option value=$niveau>" . valueNiveau($niveau) . "</option>
+                            <option value=0>Debutant</option>
+                            <option value=1>intermediaire</option></td > ";
+                }
             }
 
             function valueEtatInscr($etatInscription)

@@ -25,6 +25,10 @@ class ComposerStaticInit49e41d4ffd41e821df795c87b0d4fca9
         array (
             'Psr\\Log\\' => 8,
         ),
+        'L' => 
+        array (
+            'Lcobucci\\JWT\\' => 13,
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Cache\\' => 22,
@@ -65,6 +69,10 @@ class ComposerStaticInit49e41d4ffd41e821df795c87b0d4fca9
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Lcobucci\\JWT\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/lcobucci/jwt/src',
         ),
         'Doctrine\\Common\\Cache\\' => 
         array (
