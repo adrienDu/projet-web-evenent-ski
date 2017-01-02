@@ -1,3 +1,16 @@
+/*PAGE INDEX*/
+/*STYLES DE MISE EN PAGE*/
+
+/*espace fin section (Profil, Education, Internship, Skill & Job)*/
+.style-bottom {
+    padding-bottom: 40px;
+}
+
+/*Style tab/div (Education, Internship & Job)*/
+.tab-top {
+    margin-top: 20px;
+}
+
 /*HOME*/
 .box {
     min-height: 100vh;
@@ -49,22 +62,11 @@
     border-bottom: 1px solid #dcdcdc;
 }
 
-/*STYLES DE MISE EN PAGE*/
-
-/*espace fin section (Profil, Education, Internship, Skill & Job)*/
-.style-bottom {
-    padding-bottom: 40px;
-}
-
-/*Style tab/div (Education, Internship & Job)*/
-.tab-top {
-    margin-top: 20px;
-}
-
 /* ORGANISATION */
 .background-white{
     background-color: rgba(253, 253, 253, 0.5);
 }
+
 .titlewhite{
     color: black;
     font-size: 26px;
@@ -78,6 +80,7 @@
 .txt-orga{
     text-align: center;
 }
+
 .title-orga{
     color: black;
     font-size: 23px;
@@ -86,6 +89,7 @@
     text-transform: uppercase;
     padding-bottom: 15px;
 }
+
 .stitle-orga{
     color: black;
     font-size: 14px;
@@ -94,6 +98,7 @@
     text-transform: uppercase;
     padding-bottom: 15px;
 }
+
 .desc-orga{
     font-size: 14px;
     color: black;
@@ -101,6 +106,7 @@
 }
 
 /*PLANNING*/
+
 .background-black {
     background-color: rgba(0, 0, 0, .5);
 }
@@ -139,6 +145,7 @@ ul {
 }
 
 /*Intérressé ? */
+
 .title-int{
     text-align: center;
     color: black;
@@ -175,9 +182,11 @@ ul {
 }
 
 /*Contact*/
+
 .contactstyle{
     padding-top: 20px;
 }
+
 .contactfont{
     color: #FFFFFF;
     font-size: 15px;
@@ -185,6 +194,7 @@ ul {
 }
 
 /* PAGE FORMULAIRE */
+
 .styleform{
     margin-right: 100px;
     margin-left: 100px;
