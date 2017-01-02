@@ -235,10 +235,11 @@ $boolErr = false;
                     <!— Validation Formulaire —>
                     <p>NB: Tous les champs sont obligatoires !</p>
                     <div class="btncenter style-bottom">
-                        <input class="btn btn-default" type="submit" name="submit" value="Envoyer !">
+                        <a class="btn btn-info" href="index.php" role="button">Retour</a>
+                        <input class="btn btn-success" type="submit" name="submit" value="Envoyer !">
                     </div>
                 </form>
-                <a class="btn btn-success btn-xs" href="index.php" role="button">Retour</a>
+
             </div>
         </div>
     </div>

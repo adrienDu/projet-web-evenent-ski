@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Mae
- * Date: 20/12/2016
- * Time: 20:17
- */
 require('../bdd.php');
 include('../head.php');
 ?>
@@ -75,11 +69,6 @@ include('../head.php');
                 </table>
             </div>
             <h1 class="title">Tous les utilisateurs</h1>
-
-            <button type="button" class="btn btn-info">Tous</button>
-            <button type="button" class="btn btn-success">Validés</button>
-            <button type="button" class="btn btn-danger">Refusés</button>
-            <br/><br/>
             <?php
             $data = getAll(); ?>
             <div class="table-responsive">
@@ -124,14 +113,15 @@ include('../head.php');
                         echo selectValNiv($donnee['niveau']);
                         echo "<td class='tdstyle whitefonttdstyle'> " . valueEtatInscr($donnee['etatInscription']) . " <input name='etatInscription'type = 'text'  value = '$donnee[etatInscription] '  style='display:none'></td > ";
                         echo "<td class='tdstyle whitefonttdstyle'> $donnee[dateInscription] <input name='dateInscrition'type = 'text'  value = '$donnee[etatInscription] ' style='display: none' ></td > ";
-                        echo "<td class='tdstyle'> " . afficheButton($donnee['idInscript'], $donnee['etatInscription']) . "</form><input type='submit' class='btn btn-info btn-xs'>Modifier</button></td>";
+                        echo "<td class='tdstyle'> " . afficheButton($donnee['idInscript'], $donnee['etatInscription']) . "
+                        <input type='submit' class='btn btn-info btn-xs'>Modifier</button></td>
+                        </form>";
                         echo "</tr>";
                     }
                     ?>
                 </table>
             </div>
             <?php
-
             function valueSexe($sexe)
             {
                 if ($sexe == 0) return "homme";
@@ -185,17 +175,11 @@ include('../head.php');
                 } else {
                     return "<a class=\"btn btn-success btn-xs\" href=acceptUser.php?id=" . $idUser . " role=\"button\">Accepter
                     </a>";
-
                 }
             }
 
             ?>
             </table>
-            <script type="text/javascript">
-                function modifier() {
-
-                }
-            </script>
         </div>
     </div>
 </div>
