@@ -97,42 +97,7 @@ $app->put('/users/{id}/refuse', function ($id) use ($app) {
     }
 });
 
-//route pour creer un utilisateur
-$app->post('/creer',function(Request $request) use ($app) {
-    $app['debug'] = true;
-    $id = uuid();
 
-    //creation de la date du jour
-    $dateInscription = date("Y-m-d");
-    //etatInscription
-    $etatInscription = 0;
-//dzgi
-    $user = array(
-        'idInscript' => $id,
-            'nom' => $request->get('nom'),
-        'prenom' => $request->get('prenom'),
-        'dateNais' => $request->get('dateNais'),
-        'sexe' => $request->get('sexe'),
-        'mail' => $request->get('mail'),
-        'tel' => $request->get('tel'),
-        'rue' => $request->get('rue'),
-        'CP' => $request->get('CP'),
-        'ville' => $request->get('ville'),
-        'glisse' => $request->get('glisse'),
-        'pointure' => $request->get('pointure'),
-        'taille' => $request->get('taille'),
-        'niveau' => $request->get('niveau'),
-        'etatInscription' => $etatInscription,
-        'dateInscription' => $dateInscription
-    );
-
-    $app['db']->insert('inscription', $user);
-    $userid = $app->json($user);
-
-    return "inscription".$app['db']->lastinsertId()."effectue avec succée<br> $userid";
-
-
-});
 // default route
 $app->get('/', function () {
     return "List of avaiable methods:
