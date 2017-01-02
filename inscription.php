@@ -1,13 +1,14 @@
 <?php
-
 include('head.php');
 require_once('form.php');
+/*Déclaration variable bannière erreur*/
 $boolErr = false;
 ?>
 <body>
 <div class="container-fluid background-home">
     <div class="row">
         <div class="col-xs-12 fontform background-black">
+            <!-- Titre formulaire -->
             <h1 class="titleform"> Formulaire d'inscription pour le voyage au SKI 2017 </h1>
             <p class="presform"> Afin de nous rejoindre dans ce magnifique voyage au ski, nous aurions besoin de
                 quelques informations
@@ -16,8 +17,9 @@ $boolErr = false;
                 les
                 infos necessaires.</p>
             <h2 class="presform">Pour commencer on a besoin de savoir qui tu es :</h2>
-            <div class="styleform">
 
+            <!-- Formulaire -->
+            <div class="styleform">
                 <form action="" method="get">
                     <!— Nom —>
                     <div class="col-xs-12">
@@ -39,6 +41,7 @@ $boolErr = false;
                     <div class="col-xs-12">
                         <label class="intform">Ta date de naissance (seules les personnes majeures
                             peuvent se joindre a l'aventure) :</label>
+                        <!-- Jour de naissance -->
                         <div class="form-inline" style="margin-top: 10px; margin-left: 15px; margin-bottom: 15px">
                             <label class="intform" for=""> Jour :</label>
                             <select class="form-control" id="" name="jour">
@@ -75,7 +78,7 @@ $boolErr = false;
                                 <option value="30">30</option>
                                 <option value="31">31</option>
                             </select>
-
+                            <!-- Mois de naissance -->
                             <label class="intform" style="margin-left: 15px">Mois:</label>
                             <select class="form-control" id="" name="mois">
                                 <option></option>
@@ -92,7 +95,7 @@ $boolErr = false;
                                 <option value="11">11</option>
                                 <option value="12">12</option>
                             </select>
-
+                            <!-- Année de naissance -->
                             <label class="intform" style="margin-left: 15px">Annee:</label>
                             <select class="form-control" id="" name="annee">
                                 <option></option>
@@ -141,8 +144,8 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!— addresse —>
-                    <!— rue-->
+                    <!— Addresse —>
+                    <!— Rue-->
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="adresse">Adresse :</label>
@@ -164,7 +167,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!— Ski Snow —>
+                    <!— Ski / Snow —>
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform">Avec quoi tu glisses ?</label>
@@ -177,7 +180,7 @@ $boolErr = false;
                         </div>
                     </div>
 
-                    <!— Chaussure —>
+                    <!— Pointure —>
                     <div class="form-group">
                         <label class="intform" for="pointure">Pointure :</label>
                         <select class="form-control" id="pointure" name="pointure">
@@ -216,6 +219,7 @@ $boolErr = false;
                             <option value="200">200cm</option>
                         </select>
                     </div>
+
                     <!— Niveau —>
                     <div class="col-xs-12">
                         <div class="form-group">
@@ -242,35 +246,40 @@ $boolErr = false;
 
             </div>
         </div>
+        <!-- fin row -->
     </div>
+    <!-- fin container -->
 </div>
 </body>
 </html>
+<!-- Sticky Bar Erreur -->
 <?php
+/* Erreur */
 if (isset($_GET['submit'])) {
     $erreur = validForm();
     if (!empty($erreur)) {
         ?>
         <div class="alert alert-danger" id="stickyErreur">
-            <strong>Error!</strong></br> <a href="#" class="alert-link">
-
+            <strong>Error!</strong></br>
+            <a href="#" class="alert-link">
                 <?php
                 for ($i = 0; $i < count($erreur); $i++) {
                     echo $erreur[$i];
                 }
-
                 ?>
             </a>
         </div>
         <?php
-
-    } else {
+    }
+    /* OK */
+    else {
         ?>
         <div class="alert alert-success" id="stickyErreur">
-            <strong>Merci de vous être inscrit a notre voyage !</strong></br> <a href="" class="alert-link">
+            <strong>Merci de vous être inscrit a notre voyage !</strong></br>
+            <a href="" class="alert-link">
             </a>
         </div>
-    <?php
+        <?php
     }
-}?>
+} ?>
 
