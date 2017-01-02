@@ -5,7 +5,7 @@ include ('head.php');
 
 <body>
 
-<!-- Home -->e
+<!-- Home -->
 <section>
     <div class="background-home parallax-section" id="border-home">
         <div class="container-fluid">
@@ -137,20 +137,28 @@ Au programme : ski, snow, fun, bierres et raclettes !!</p>
         <div class="row">
             <div class="col-xs-12 style-bottom">
                 <h3 class="title-int">Intéressé ?</h3>
-                <div class="btncenter">
-                <a class="btn btn-default btn-lg btn-int" href="inscription.php" role="button">Inscris-toi !</a>
+                <div class="btncenter well center-block">
+                <a class="btn btn-primary btn-block" href="inscription.php" role="button">Inscris-toi !</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <section>
-    <div class="container-fluid">
+    <div class="container-fluid background-home">
         <div class="row">
             <div class="col-xs-12 style-bottom background-black">
                 <!-- Titre Section -->
                 <div class=" col-xs-offset-1 col-sm-offset-1">
                     <h2 class="titleblack">Contacts</h2>
+                    <div class="col-xs-12 col-sm-6 contactstyle contactfont">
+                        <p>Adrien Duhoux</p>
+                        <p>Tel: 0663369284</p>
+                        <p>Mail: adrien.duhoux@gmail.com</p></div>
+                    <div class="col-xs-12 col-sm-6 contactstyle contactfont">
+                        <p>Maeva Margueritat</p>
+                        <p>Tel: 0678943053</p>
+                        <p>Mail: maeva.mgt@outlook.com</p></div>
                 </div>
             </div>
         </div>

@@ -11,9 +11,12 @@ include('../head.php');
 <!-- CSS -->
 <link rel="stylesheet" href="admin.css" media="all">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="../images/snowflakeicon.png">
+
 <div class="container-fluid background-home">
     <div class="row">
         <div class="col-xs-12 background-black">
+            <h1 class="title">Page administrateur | Voyage au ski</h1><br/>
             <?php
             $data = getAllWaiting();
             $res = $data->rowCount();
@@ -75,7 +78,7 @@ include('../head.php');
 
             <button type="button" class="btn btn-info">Tous</button>
             <button type="button" class="btn btn-success">Validés</button>
-            <button type="button" class="btn btn-danger">Refusés</button>
+            <button type="button" class="btn btn-danger">Refusés</button><br/><br/>
             <?php
             $data = getAll(); ?>
             <div class="table-responsive">
@@ -159,7 +162,8 @@ include('../head.php');
                 if ($etatUser == 1) {
                     return "<a class=\"btn btn-danger btn-xs\" href=refuseUser.php?id=" . $idUser . " role=\"button\">Refuser</a>";
                 } else {
-                    return "<a class=\"btn btn-success btn-xs\" href=acceptUser.php?id=" . $idUser . " role=\"button\">Accept</a>";
+                    return "<a class=\"btn btn-success btn-xs\" href=acceptUser.php?id=" . $idUser . " role=\"button\">Accepter
+                    </a>";
 
                 }
             }
