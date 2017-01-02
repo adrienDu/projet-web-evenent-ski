@@ -238,7 +238,7 @@ $boolErr = false;
                         <input class="btn btn-default" type="submit" name="submit" value="Envoyer !">
                     </div>
                 </form>
-
+                <a class="btn btn-success btn-xs" href="index.php" role="button">Retour</a>
             </div>
         </div>
     </div>
@@ -248,7 +248,7 @@ $boolErr = false;
 <?php
 if (isset($_GET['submit'])) {
     $erreur = validForm();
-    if(!empty($erreur)) {
+    if (!empty($erreur)) {
         ?>
         <div class="alert alert-danger" id="stickyErreur">
             <strong>Error!</strong></br> <a href="#" class="alert-link">
@@ -263,15 +263,13 @@ if (isset($_GET['submit'])) {
         </div>
         <?php
 
-    }
-    else {
+    } else {
         ?>
         <div class="alert alert-success" id="stickyErreur">
-            <strong>Merci de vous être inscrit a notre superbe voyage !</strong></br> <a href="#" class="alert-link">
+            <strong>Merci de vous être inscrit a notre voyage !</strong></br> <a href="" class="alert-link">
             </a>
         </div>
-        <?php
-        header('Refresh: 2; URL=index.php');
-
+    <?php
     }
-}
+}?>
+

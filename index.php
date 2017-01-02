@@ -26,7 +26,7 @@ Au programme : ski, snow, fun, bierres et raclettes !!</p>
 <section>
     <div class="container-fluid snowbackground">
         <div class="row">
-            <div class="col-xs-12 style-bottom">
+            <div class="col-xs-12 style-bottom background-white">
                 <!-- Titre Section -->
                 <div class=" col-xs-offset-1 col-sm-offset-1">
                     <h2 class="titlewhite">Organisation</h2>
@@ -135,7 +135,7 @@ Au programme : ski, snow, fun, bierres et raclettes !!</p>
 <section>
     <div class="container-fluid snowbackground">
         <div class="row">
-            <div class="col-xs-12 style-bottom">
+            <div class="col-xs-12 style-bottom background-white">
                 <h3 class="title-int">Intéressé ?</h3>
                 <div class="btncenter">
                 <a class="btn btn-primary btn-block" href="inscription.php" role="button">Inscris-toi !</a>

@@ -62,6 +62,9 @@
 }
 
 /* ORGANISATION */
+.background-white{
+    background-color: rgba(253, 253, 253, 0.5);
+}
 .titlewhite{
     color: black;
     font-size: 26px;
