@@ -1,14 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: adrien
- * Date: 26/11/2016
- * Time: 11:48
- */
-//creation d'un uuid unique pour les utilisateurs
+
+//Fonction de creation d'un uuid unique pour les utilisateurs
 function uuid()
 {
-    //create random number
+    //Génération d'un nombre aléatoire
     do {
         $cstrong = true;
         $bytes = openssl_random_pseudo_bytes(4, $cstrong);
@@ -31,7 +26,7 @@ function uuid()
     return $uuid;
 }
 
-//verification de l'uuid dans la bdd
+//Fonction de vérification de l'uuid dans la bdd
 function checkUUID($uuid)
 {
     $bdd = connectBDD();
@@ -44,7 +39,7 @@ function checkUUID($uuid)
     }
 }
 
-//connection a la bdd
+//Fonction de connection a la bdd
 function connectBDD()
 {
     try {
@@ -55,7 +50,7 @@ function connectBDD()
     return $bdd;
 }
 
-//creation d'un nouvel utilisateur
+//Fonction de creation d'un nouvel utilisateur
 function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau)
 {
     //connection a la bdd
@@ -66,8 +61,6 @@ function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $rue, $CP, $ville
     $dateInscription = date("Y-m-d");
     //etatInscription
     $etatInscription = 0;
-
-
     //preparation de la requete
     $query = $bdd->prepare('INSERT INTO inscription(`idInscript`, `nom`, `prenom`, `dateNais`, `sexe`, `mail`, `tel`, `rue`, `CP`, `ville`, `glisse`, `pointure`, `taille`, `niveau`, `etatInscription`, `dateInscription`) VALUES (:idInscript,:nom,:prenom,:dateNais,:sexe,:mail,:tel,:rue,:CP,:ville,:glisse,:pointure,:taille,:niveau,:etatInscription,:dateInscription)');
     $query->execute(array(
@@ -90,7 +83,7 @@ function newInsc($nom, $prenom, $dateNais, $sexe, $mail, $tel, $rue, $CP, $ville
     ));
 }
 
-//recuperation de tous les utilisateurs de la base de donnée
+//Fonction de recuperation de tous les utilisateurs de la base de données
 function getAll()
 {
     $bdd = connectBDD();
@@ -98,13 +91,15 @@ function getAll()
    return $data;
 }
 
-//recuperation uniquement des utilisateurs non validés
+//Fonction de récuperation uniquement des utilisateurs non validés
 function getAllWaiting()
 {
     $bdd = connectBDD();
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 0 ORDER BY dateInscription ASC');
     return $data;
 }
+
+//Fonction de récupération des utilisateurs validés
 function getAllValidated()
 {
     $bdd = connectBDD();
@@ -112,41 +107,42 @@ function getAllValidated()
     return $data;
 }
 
-
-//valid user
+//Fonction de validation d'un utilisateur
 function setUserValid($uuid){
     $bdd = connectBDD();
     $query = $bdd->prepare('UPDATE inscription SET	etatInscription=1  WHERE idInscript = :id');
     $query->execute(array('id' => $uuid));
 }
 
-//refuse user
+//Fonction de refus d'un utilisateur
 function setUserUnvalid($uuid){
     $bdd = connectBDD();
     $query = $bdd->prepare('UPDATE inscription SET	etatInscription=2  WHERE idInscript = :id');
     $query->execute(array('id' => $uuid));
 }
-//recuperer valid
+
+//Fonction de récupération des utilisateurs validés
 function getAllValidUser(){
     $bdd = connectBDD();
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 1 ORDER BY dateInscription ASC');
     return $data;
 }
-//recuperer refusé
+
+//Fonction de récupération des utilisateurs refusés
 function getAllUnvalidUser(){
     $bdd = connectBDD();
     $data = $bdd->query('SELECT * FROM inscription WHERE etatInscription = 2 ORDER BY dateInscription ASC');
     return $data;
 }
 
-//recuperer utilisateur par id
-
+//Fonction de récupération des utilisateurs par id
 function getUserById($id){
     $bdd = connectBDD();
     $query = $bdd->prepare('SELECT * FROM inscription WHERE idInscript = :idInscript');
     $query->execute(array(':idInscript' => $id));
 }
-//modifier user
+
+//Fonction de modification d'un utilisateur
 function modifyUser($idInscript,$nom, $prenom, $dateNais, $sexe, $mail, $tel, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau, $etatInscription){
     $bdd = connectBDD();
     $query = $bdd -> prepare('UPDATE `inscription` SET `nom`=:nom,`prenom`=:prenom,`dateNais`=:dateNais,`sexe`=:sexe,`mail`=:mail,`tel`=:tel,`rue`=:rue,`CP`=:CP,`ville`=:ville,`glisse`=:glisse,`pointure`=:pointure,`taille`=:taille,`niveau`=:niveau,`etatInscription`=:etatInscription WHERE idInscript LIKE :idInscript');
@@ -169,7 +165,7 @@ function modifyUser($idInscript,$nom, $prenom, $dateNais, $sexe, $mail, $tel, $r
     ));
 }
 
-//verifier si un mail existe deja en bdd
+//Fonction de vérification de l'existance du mail dans la bdd
 function checkmail($mail){
     $bdd = connectBDD();
     $query = $bdd->prepare('SELECT * FROM inscription WHERE mail = :mail');
