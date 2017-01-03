@@ -5,11 +5,13 @@ include('../head.php');
 <!-- CSS -->
 <link rel="stylesheet" href="admin.css" media="all">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--Icon -->
 <link rel="icon" href="../images/snowflakeicon.png">
 
 <div class="container-fluid background-home">
     <div class="row">
         <div class="col-xs-12 background-black">
+            <!-- Titre page Admin -->
             <h1 class="title">Page administrateur | Voyage au ski</h1><br/>
             <?php
             $data = getAllWaiting();
@@ -19,9 +21,11 @@ include('../head.php');
             }
             else{
             ?>
+            <!-- Tableau des utilisateurs en attende de validation -->
             <h1 class="title">Utilisateurs en attente</h1>
             <div class="table-responsive">
                 <table class="table table-condensed tablestyle">
+                    <!-- Entêtes -->
                     <thead class="entete">
                     <tr>
                         <th class="thstyle">Nom</th>
@@ -42,6 +46,7 @@ include('../head.php');
                         <th>Actions</th>
                     </tr>
                     </thead>
+                    <!-- Remplissage du tableau -->
                     <?php
                     while ($donnee = $data->fetch()) {
                         echo "</tr>";
@@ -64,15 +69,19 @@ include('../head.php');
                         <a class=\"btn btn-danger btn-xs\" href=\"refuseUser.php?id=\"" . $donnee['idInscript'] . " role=\"button\">Refuser</a>";
                         echo "</tr>";
                     }
-
                     } ?>
                 </table>
+                <!-- Fin des utilisateurs en attente -->
             </div>
+
+
+            <!-- Tableau de tous les utilisateurs -->
             <h1 class="title">Tous les utilisateurs</h1>
             <?php
             $data = getAll(); ?>
             <div class="table-responsive">
                 <table class="table table-condensed table-hover tablestyle">
+                    <!-- Entêtes -->
                     <thead class="entete">
                     <tr>
                         <th class="thstyle">Nom</th>
@@ -93,6 +102,7 @@ include('../head.php');
                         <th>Actions</th>
                     </tr>
                     </thead>
+                    <!-- Remplissage du tabeau -->
                     <?php
                     while ($donnee = $data->fetch()) {
                         echo " </tr > ";
@@ -121,53 +131,64 @@ include('../head.php');
                     ?>
                 </table>
             </div>
+            <!-- Fonctions pour remplissage du tableau -->
             <?php
+            /*Affichage Homme ou Femme*/
             function valueSexe($sexe)
             {
                 if ($sexe == 0) return "homme";
                 else return "femme";
             }
-
+            /*Affichage Ski ou Snow*/
             function valueGlisse($glisse)
             {
                 if ($glisse == 0) return "ski";
                 else return "snow";
             }
-
+            /*Affichage du niveau */
             function valueNiveau($niveau)
             {
                 if ($niveau == 0) return "debutant";
                 else if ($niveau == 1) return "intermediaire";
                 else return "expert";
             }
-
+            /*Modification du niveau*/
             function selectValNiv($niveau)
             {
                 if ($niveau == 0) {
-                    return "<td class='tdstyle'><select class='form-control' id='niveau' name='niveau'>
+                    return "<td class='tdstyle'>
+                            <select class='form-control selectstyle' id='niveau' name='niveau'>
                             <option value=$niveau>" . valueNiveau($niveau) . "</option>
                             <option value=1>Intermediaire</option>
-                            <option value=2>Expert</option></td > ";
+                            <option value=2>Expert</option>
+                            </select>
+                            </td > ";
                 } else if ($niveau == 1) {
-                    return "<td class='tdstyle'><select class='form-control' id='niveau' name='niveau'>
+                    return "<td class='tdstyle'>
+                            <select class='form-control selectstyle' id='niveau' name='niveau'>
                             <option value=$niveau>" . valueNiveau($niveau) . "</option>
                             <option value=0>Debutant</option>
-                            <option value=2>Expert</option></td > ";
+                            <option value=2>Expert</option>
+                            </select>
+                            </td > ";
                 } else if ($niveau == 2) {
-                    return "<td class='tdstyle'><select class='form-control' id='niveau' name='niveau'>
+                    return "<td class='tdstyle'>
+                            <select class='form-control selectstyle' id='niveau' name='niveau'>
                             <option value=$niveau>" . valueNiveau($niveau) . "</option>
                             <option value=0>Debutant</option>
-                            <option value=1>intermediaire</option></td > ";
+                            <option value=1>intermediaire</option>
+                            </select>
+                            </td > ";
                 }
             }
-
+            /*Affichage de l'etat d'inscription d'un utilisateur (validé, en attente ou refusé)*/
             function valueEtatInscr($etatInscription)
             {
                 if ($etatInscription == 0) return "En attente";
                 else if ($etatInscription == 1) return "Validé";
                 else return "Refusé";
             }
-
+            /*Affichage des boutons de modification (refuser/accepter)*/
             function afficheButton($idUser, $etatUser)
             {
                 if ($etatUser == 1) {
@@ -180,8 +201,11 @@ include('../head.php');
 
             ?>
             </table>
+            <!-- Fin div background -->
         </div>
+        <!-- Fin row -->
     </div>
+    <!-- Fin container -->
 </div>
 
 
