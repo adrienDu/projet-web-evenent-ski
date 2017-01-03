@@ -2,9 +2,8 @@
 require('../bdd.php');
 include('../head.php');
 
-$data =getUserById($_GET['id']);
-$valeur = 
-
+$data = getUserById($_GET['id']);
+$valeur = $data->fetch();
 //modifyUser($_GET['idInscript'],$_GET['nom'], $_GET['prenom'], $date, $_GET['sexe'], $_GET['mail'], $_GET['tel'], $_GET['rue'], $_GET['CP'], $_GET['ville'], $_GET['glisse'], $_GET['pointure'], $_GET['taille'], $_GET['niveau'], $_GET['etatInscription'], $_GET['dateInscription']);
 ?>
 <!-- CSS -->
@@ -25,7 +24,7 @@ $valeur =
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="nom">Ton Nom :</label>
-                            <?php echo "<input type='text' class='form-control' id='nom' name='nom' value='.$valeur[nom].'>"; ?>
+                            <?php echo "<input type='text' class='form-control' id='nom' name='nom' value='$valeur[nom]'>"; ?>
                         </div>
                     </div>
 
@@ -33,84 +32,15 @@ $valeur =
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="prenom">Prenom :</label>
-                            <input type="text" class="form-control" id="prenom" name="prenom">
+                            <?php echo "<input type='text' class='form-control' id='prenom' name='prenom' value='$valeur[prenom]'>"; ?>
                         </div>
                     </div>
 
                     <!— Date naissance —>
                     <div class="col-xs-12">
-                        <label class="intform">Date de naissance :</label>
-                        <!-- Jour de naissance -->
-                        <div class="form-inline" style="margin-top: 10px; margin-left: 15px; margin-bottom: 15px">
-                            <label class="intform" for=""> Jour :</label>
-                            <select class="form-control" id="" name="jour">
-                                <option></option>
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
-                                <option value="09">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                                <option value="13">13</option>
-                                <option value="14">14</option>
-                                <option value="15">15</option>
-                                <option value="16">16</option>
-                                <option value="17">17</option>
-                                <option value="18">18</option>
-                                <option value="19">19</option>
-                                <option value="20">20</option>
-                                <option value="21">21</option>
-                                <option value="22">22</option>
-                                <option value="23">23</option>
-                                <option value="24">24</option>
-                                <option value="25">25</option>
-                                <option value="26">26</option>
-                                <option value="27">27</option>
-                                <option value="28">28</option>
-                                <option value="29">29</option>
-                                <option value="30">30</option>
-                                <option value="31">31</option>
-                            </select>
-                            <!-- Mois de naissance -->
-                            <label class="intform" style="margin-left: 15px">Mois:</label>
-                            <select class="form-control" id="" name="mois">
-                                <option></option>
-                                <option value="01">01</option>
-                                <option value="02">02</option>
-                                <option value="03">03</option>
-                                <option value="04">04</option>
-                                <option value="05">05</option>
-                                <option value="06">06</option>
-                                <option value="07">07</option>
-                                <option value="08">08</option>
-                                <option value="09">09</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
-                            </select>
-                            <!-- Année de naissance -->
-                            <label class="intform" style="margin-left: 15px">Annee:</label>
-                            <select class="form-control" id="" name="annee">
-                                <option></option>
-                                <option value="1998">1998</option>
-                                <option value="1997">1997</option>
-                                <option value="1996">1996</option>
-                                <option value="1995">1995</option>
-                                <option value="1994">1994</option>
-                                <option value="1993">1993</option>
-                                <option value="1992">1992</option>
-                                <option value="1991">1991</option>
-                                <option value="1990">1990</option>
-                                <option value="1989">1989</option>
-                                <option value="1987">1987</option>
-                                <option value="1986">1986</option>
-                            </select>
+                        <div class="form-group">
+                            <label class="intform">Date de naissance :</label>
+                            <?php echo "<input type='text' class='form-control' name='date' value='$valeur[dateNais]' disabled>"; ?>
                         </div>
                     </div>
 
@@ -131,7 +61,7 @@ $valeur =
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="mail">Mail :</label>
-                            <input type="email" class="form-control" id="mail" name="mail">
+                            <?php echo "<input type='text' class='form-control' id='mail' name='mail' value='$valeur[mail]' disabled>"; ?>
                         </div>
                     </div>
 
@@ -139,7 +69,7 @@ $valeur =
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="tel">Telephone :</label>
-                            <input type="tel" class="form-control" id="tel" name="tel">
+                            <?php echo "<input type='text' class='form-control' id='tel' name='tel' value='0$valeur[tel]'>"; ?>
                         </div>
                     </div>
 
@@ -148,21 +78,21 @@ $valeur =
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="adresse">Adresse :</label>
-                            <input type="text" class="form-control" id="adresse" name="rue">
+                            <?php echo "<input type='text' class='form-control' id='rue' name='rue' value='$valeur[rue]'>"; ?>
                         </div>
                     </div>
                     <!— CP-->
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label class="intform" for="cp">Code postale :</label>
-                            <input type="text" class="form-control" id="cp" name="cp">
+                            <label class="intform" for="cp">Code postal :</label>
+                            <?php echo "<input type='text' class='form-control' id='cp' name='cp' value='$valeur[cp]'>"; ?>
                         </div>
                     </div>
                     <!— Ville-->
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform" for="ville">Ville :</label>
-                            <input type="text" class="form-control" id="ville" name="ville">
+                            <?php echo "<input type='text' class='form-control' id='ville' name='ville' value='$valeur[ville]'>"; ?>
                         </div>
                     </div>
 
@@ -223,15 +153,7 @@ $valeur =
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform">Niveau :</label>
-                            <div class="radio">
-                                <label><input type="radio" name="niveau" value="0">Débutant</label>
-                            </div>
-                            <div class="radio">
-                                <label><input type="radio" name="niveau" value="1">Intermédiaire</label>
-                            </div>
-                            <div class="radio">
-                                <label><input type="radio" name="niveau" value="2">Expert</label>
-                            </div>
+                            
                         </div>
                     </div>
 
