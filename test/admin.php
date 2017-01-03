@@ -65,8 +65,8 @@ include('../head.php');
                         echo "<td class='tdstyle whitefonttdstyle'>" . valueNiveau($donnee['niveau']) . "</td>";
                         echo "<td style='display: none'>" . valueEtatInscr($donnee['etatInscription']) . "</td>";
                         echo "<td class='tdstyle whitefonttdstyle'> $donnee[dateInscription]</td>";
-                        echo "<td class='tdstyle whitefonttdstyle'><a class=\"btn btn-success btn-xs\" href=\"acceptUser.php?id=\"" . $donnee['idInscript'] . " role=\"button\">Accept</a>
-                        <a class=\"btn btn-danger btn-xs\" href=\"refuseUser.php?id=\"" . $donnee['idInscript'] . " role=\"button\">Refuser</a>";
+                        echo "<td class='tdstyle whitefonttdstyle'><a class=\"btn btn-success btn-xs\" href=\"acceptUser.php?id=".$donnee['idInscript']."\"role=\"button\">Accept</a>
+                        <a class=\"btn btn-danger btn-xs\" href=\"refuseUser.php?id=".$donnee['idInscript']."\"role=\"button\">Refuser</a>";
                         echo "</tr>";
                     }
                     } ?>
@@ -123,8 +123,8 @@ include('../head.php');
                         echo selectValNiv($donnee['niveau']);
                         echo "<td class='tdstyle whitefonttdstyle'> " . valueEtatInscr($donnee['etatInscription']) . " <input name='etatInscription'type = 'text'  value = '$donnee[etatInscription] '  style='display:none'></td > ";
                         echo "<td class='tdstyle whitefonttdstyle'> $donnee[dateInscription] <input name='dateInscrition'type = 'text'  value = '$donnee[etatInscription] ' style='display: none' ></td > ";
-                        echo "<td class='tdstyle'> " . afficheButton($donnee['idInscript'], $donnee['etatInscription']) . "
-                        <input type='submit' class='btn btn-info btn-xs'>Modifier</button></td>
+                        echo "<td class='tdstyle'> 
+                        <input type='submit' class='btn btn-info btn-xs'></button></td>
                         </form>";
                         echo "</tr>";
                     }
@@ -188,16 +188,7 @@ include('../head.php');
                 else if ($etatInscription == 1) return "Validé";
                 else return "Refusé";
             }
-            /*Affichage des boutons de modification (refuser/accepter)*/
-            function afficheButton($idUser, $etatUser)
-            {
-                if ($etatUser == 1) {
-                    return "<a class=\"btn btn-danger btn-xs\" href=refuseUser.php?id=" . $idUser . " role=\"button\">Refuser</a>";
-                } else {
-                    return "<a class=\"btn btn-success btn-xs\" href=acceptUser.php?id=" . $idUser . " role=\"button\">Accepter
-                    </a>";
-                }
-            }
+
 
             ?>
             </table>
