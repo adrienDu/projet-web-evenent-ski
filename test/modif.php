@@ -103,10 +103,12 @@ $valeur = $data->fetch();
                             <div class="form-group">
                                 <label class="intform">Ski ou snow ?</label>
                                 <div class="radio">
-                                    <label><input type="radio" name="glisse" value="0">Ski</label>
-                                </div>
-                                <div class="radio">
-                                    <label><input type="radio" name="glisse" value="1">Snow</label>
+                                    <div class="radio">
+                                        <label><input type="radio" name="glisse" value="0" class="intform" disabled <?php if($valeur['glisse'] == 0){ echo "checked"; }?>>Ski</label>
+                                    </div>
+                                    <div class="radio">
+                                        <label><input type="radio" name="glisse" value="1" disabled  <?php if($valeur['glisse'] == 1){ echo "checked";} ?>>Snow</label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -136,8 +138,7 @@ $valeur = $data->fetch();
                         <!— taille-->
                         <div class="form-group">
                             <label class="intform" for="taille">Taille :</label>
-                            <select class="form-control" id="taille" name="taille">
-                                <option></option>
+                            <?php echo selectValNiv($valeur['taille']); ?>
                                 <option value="155">155cm</option>
                                 <option value="160">160cm</option>
                                 <option value="165">165cm</option>
@@ -148,7 +149,6 @@ $valeur = $data->fetch();
                                 <option value="190">190cm</option>
                                 <option value="195">195cm</option>
                                 <option value="200">200cm</option>
-                            </select>
                         </div>
 
                         <!— Niveau —>
@@ -191,6 +191,17 @@ function valueGlisse($glisse)
     else return "snow";
 }
 
+/*Modification de la pointure*/
+function selectValPoint($pointure)
+{
+
+}
+
+/*Modification de la taille*/
+function selectValTaille($taille)
+{
+
+}
 /*Modification du niveau*/
 function selectValNiv($niveau)
 {
@@ -215,7 +226,7 @@ function selectValNiv($niveau)
     <select class='form-control input-sm selectstyle' id='niveau' name='niveau'>
         <option value=$niveau>" . valueNiveau($niveau) . "</option>
         <option value=0>Debutant</option>
-        <option value=1>intermediaire</option>
+        <option value=1>Intermediaire</option>
     </select>
 </td > ";
     }

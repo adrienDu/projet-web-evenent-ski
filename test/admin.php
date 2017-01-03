@@ -12,17 +12,17 @@ include('../head.php');
     <div class="row">
         <div class="col-xs-12 background-black">
             <!-- Titre page Admin -->
-            <h1 class="title">Page administrateur | Voyage au ski</h1><br/>
+            <h1 class="title1">Page administrateur | Voyage au ski</h1><br/>
             <?php
             $data = getAllWaiting();
             $res = $data->rowCount();
             if ($res == 0){
-                echo "<h1 class='title'>Aucun utilisateur en attente</h1>";
+                echo "<h1 class='title1'>Aucun utilisateur en attente</h1>";
             }
             else{
             ?>
             <!-- Tableau des utilisateurs en attende de validation -->
-            <h1 class="title">Utilisateurs en attente</h1>
+            <h1 class="title1">Utilisateurs en attente</h1>
             <div class="table-responsive">
                 <table class="table table-condensed tablestyle">
                     <!-- Entêtes -->
@@ -76,7 +76,7 @@ include('../head.php');
 
 
             <!-- Tableau de tous les utilisateurs -->
-            <h1 class="title">Tous les utilisateurs</h1>
+            <h1 class="title1">Tous les utilisateurs</h1>
             <?php
             $data = getAll(); ?>
             <div class="table-responsive">
