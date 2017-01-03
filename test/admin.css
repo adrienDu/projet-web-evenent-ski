@@ -27,6 +27,7 @@
 
 .thstyle {
     padding-top: 30px !important;
+    text-align: center;
 }
 
 .entete {
@@ -38,9 +39,6 @@
 
 .tdstyle {
     vertical-align: middle !important;
-}
-
-.whitefonttdstyle {
     color: #ffffff;
     text-align: center;
     font-size: 10px;
