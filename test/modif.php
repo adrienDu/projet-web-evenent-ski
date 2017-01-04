@@ -18,11 +18,11 @@ $valeur = $data->fetch();
 <link rel="icon" href="../images/snowflakeicon.png">
 
 <body>
-<div class="container-fluid background-home">
+<div class="container-fluid background-snow">
     <div class="row">
-        <div class="col-xs-12">
-            <h1>Modification d'un utilisateur</h1>
-            <div class="well center-block" style="max-width:600px">
+        <div class="col-xs-12 background-white">
+            <h1 class="title2">Modification d'un utilisateur</h1>
+            <figure class="formblock" style="max-width:600px">
                 <!-- Formulaire -->
                 <form action="" method="get">
                     <!— Nom —>
@@ -131,45 +131,48 @@ $valeur = $data->fetch();
                     </div>
 
                     <!— Pointure —>
+                    <div class="col-xs-12">
                     <div class="form-group">
                         <label class="intform" for="pointure">Pointure :</label>
                         <select class="form-control" id="pointure" name="pointure">
-                           <?php echo "<option value='$valeur[pointure]'>$valeur[pointure]</option>";
+                            <?php echo "<option value='$valeur[pointure]'>$valeur[pointure]</option>";
                             valuePointure($valeur['pointure']);
-                           ?>
+                            ?>
 
                         </select>
                     </div>
+                    </div>
 
-                    <!— taille-->
+                    <!— Taille-->
+                    <div class="col-xs-12">
                     <div class="form-group">
                         <label class="intform" for="taille">Taille :</label>
                         <select class="form-control" id="taille" name="taille">
-                        <?php  echo "<option value='$valeur[taille]'>$valeur[taille] cm</option>";
-                         valueTaille($valeur['taille']); ?>
+                            <?php echo "<option value='$valeur[taille]'>$valeur[taille] cm</option>";
+                            valueTaille($valeur['taille']); ?>
                         </select>
-
+                    </div>
                     </div>
 
                     <!— Niveau —>
                     <div class="col-xs-12">
-                        <div class="form-group">
-                            <label class="intform">Niveau :</label>
-                            <?php echo
-                            selectValNiv($valeur['niveau']); ?>
-                        </div>
+                    <div class="form-group">
+                        <label class="intform">Niveau :</label>
+                        <?php echo
+                        selectValNiv($valeur['niveau']); ?>
+                    </div>
                     </div>
 
-                   <?php echo "<input style='display: none' name='id' value='$_SESSION[id]'>"; ?>
+                    <?php echo "<input style='display: none' name='id' value='$_SESSION[id]'>"; ?>
 
                     <!— Validation Formulaire —>
                     <p>NB: Tous les champs sont obligatoires !</p>
-                    <div class="btncenter style-bottom">
+                    <div class="btncenter">
                         <a class="btn btn-info" href="admin.php" role="button">Retour</a>
                         <input class="btn btn-success" type="submit" name="submit" value="Envoyer !">
                     </div>
                 </form>
-            </div>
+            </figure>
 
         </div>
         <!-- fin row -->
@@ -183,70 +186,74 @@ $valeur = $data->fetch();
 /*Affichage Homme ou Femme*/
 function valueSexe($sexe)
 {
-    if ($sexe == 0) return "homme";
-    else return "femme";
+    if ($sexe == 0) return "Homme";
+    else return "Femme";
 }
 
 /*Affichage Ski ou Snow*/
 function valueGlisse($glisse)
 {
-    if ($glisse == 0) return "ski";
-    else return "snow";
+    if ($glisse == 0) return "Ski";
+    else return "Snow";
 }
 
 /*Modification du niveau*/
 function selectValNiv($niveau)
 {
     if ($niveau == 0) {
-        return "<td class='tdstyle'>
-    <select class='form-control input-sm selectstyle' id='niveau' name='niveau'>
+        return "
+    <select class='form-control' id='niveau' name='niveau'>
         <option value=$niveau>" . valueNiveau($niveau) . "</option>
         <option value=1>Intermediaire</option>
         <option value=2>Expert</option>
-    </select>
-</td > ";
+    </select>";
     } else if ($niveau == 1) {
-        return "<td class='tdstyle'>
-    <select class='form-control input-sm selectstyle' id='niveau' name='niveau'>
+        return "
+    <select class='form-control' id='niveau' name='niveau'>
         <option value=$niveau>" . valueNiveau($niveau) . "</option>
         <option value=0>Debutant</option>
         <option value=2>Expert</option>
-    </select>
-</td > ";
+    </select>";
     } else if ($niveau == 2) {
-        return "<td class='tdstyle'>
-    <select class='form-control input-sm selectstyle' id='niveau' name='niveau'>
+        return "
+    <select class='form-control' id='niveau' name='niveau'>
         <option value=$niveau>" . valueNiveau($niveau) . "</option>
         <option value=0>Debutant</option>
         <option value=1>Intermediaire</option>
-    </select>
-</td > ";
+    </select>";
     }
 }
 
 /*Affichage du niveau */
 function valueNiveau($niveau)
 {
-    if ($niveau == 0) return "debutant";
-    else if ($niveau == 1) return "intermediaire";
-    else return "expert";
+    if ($niveau == 0) return "Débutant";
+    else if ($niveau == 1) return "Intermediaire";
+    else return "Expert";
 }
 
 //affichage valeur pointure
-function valuePointure($pointure){
-    for($i=33; $i<=46; $i++){
-        if($i == $pointure){$i++;}
-       echo "<option value='$i'>$i</option>";
+function valuePointure($pointure)
+{
+    for ($i = 33; $i <= 46; $i++) {
+        if ($i == $pointure) {
+            $i++;
+        }
+        echo "<option value='$i'>$i</option>";
     }
 }
 
 //affichage valeurs tailles
-function valueTaille($taille){
-    for($i=155; $i<=200; $i+=5){
-        if($i == $taille){$i+=5;}
+function valueTaille($taille)
+{
+    for ($i = 155; $i <= 200; $i += 5) {
+        if ($i == $taille) {
+            $i += 5;
+        }
         echo "<option value='$i'>$i cm</option>";
     }
 }
+
 /* Erreur */
 if (isset($_GET['submit'])) {
     $erreur = validForm();
@@ -277,5 +284,9 @@ if (isset($_GET['submit'])) {
         <?php
     }
 
-} ?>
+}
+
+//Variables de session vides
+unset($_SESSION['id']);
+?>
 </html>

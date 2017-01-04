@@ -1,14 +1,18 @@
+/*PAGE ADMIN.PHP*/
+/*Image de fond montagne*/
 .background-home {
     position: relative;
     background: url("../images/background1.jpg") top center no-repeat fixed;
     background-size: cover;
 }
 
+/*Fond transparent noir*/
 .background-black {
     text-align: center;
     background-color: rgba(0, 0, 0, .7);
 }
 
+/*Style titres*/
 .title1 {
     color: #ffffff;
     font-size: 40px;
@@ -16,41 +20,85 @@
     font-family: 'Muli', Arial, sans-serif;
 }
 
-
+/*Taille lignes bootstrap*/
 .table {
     white-space: nowrap;
 }
 
+/*Format tableau général*/
 .tablestyle {
     font-size: 10px;
     font-family: 'Muli', Arial, sans-serif;
 }
 
+/*Format 1e ligne*/
 .thstyle {
-    padding-top: 30px !important;
+    /*padding-top: 30px !important;*/
     text-align: center;
 }
-
 .entete {
-    color: #ffffff;
+    color: #252525;
     font-size: 10px;
     font-family: 'Muli', Arial, sans-serif;
     text-transform: uppercase;
 }
 
+/*Format autres lignes*/
 .tdstyle {
     vertical-align: middle !important;
-    color: #ffffff;
+    color: #252525;
     text-align: center;
     font-size: 10px;
     font-family: 'Muli', Arial, sans-serif;
 }
 
-.selectstyle {
-    min-width: 150px;
+
+/* PAGE MODIF.PHP */
+
+/*Image de fond neige*/
+.background-snow {
+    position: relative;
+    background: url("../images/neige.png") top center no-repeat fixed;
+    background-size: cover;
 }
 
-#stickyErreur{
+/*Fond transparent blanc*/
+.background-white{
+    text-align: center;
+    background-color: rgba(253, 253, 253, 0.5);
+}
+
+/*Style du titre*/
+.title2 {
+    color: black;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-family: 'Muli', Arial, sans-serif;
+}
+
+/*Block derriere le formulaire*/
+.formblock{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 17px 10px;
+    background-color: #f7f7f9;
+    border: 1px solid #e1e1e8;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 15px;
+    font-family: 'Muli', Arial, sans-serif;
+}
+
+/* Boutons formulaire*/
+.btncenter {
+    padding-top: 30px;
+    text-align: center;
+}
+
+/*Baniere erreur ou ok*/
+#stickyErreur {
     position: fixed;
     top: 0%;
     width: 100%;

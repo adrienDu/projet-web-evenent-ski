@@ -25,6 +25,7 @@ session_unset();
             ?>
             <!-- Tableau des utilisateurs en attende de validation -->
             <h1 class="title1">Utilisateurs en attente</h1>
+            <figure class="formblock">
             <div class="table-responsive">
                 <table class="table table-condensed tablestyle">
                     <!-- Entêtes -->
@@ -75,12 +76,13 @@ session_unset();
                 </table>
                 <!-- Fin des utilisateurs en attente -->
             </div>
-
+            </figure>
 
             <!-- Tableau de tous les utilisateurs -->
             <h1 class="title1">Tous les utilisateurs</h1>
             <?php
             $data = getAll(); ?>
+            <figure class="formblock">
             <div class="table-responsive">
                 <table class="table table-condensed tablestyle">
                     <!-- Entêtes -->
@@ -163,6 +165,7 @@ session_unset();
             }
             ?>
             </table>
+                </figure>
             <!-- Fin div background -->
         </div>
         <!-- Fin row -->
