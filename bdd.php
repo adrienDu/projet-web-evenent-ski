@@ -140,6 +140,7 @@ function getUserById($id){
     $bdd = connectBDD();
     $query = $bdd->prepare('SELECT * FROM inscription WHERE idInscript = :idInscript');
     $query->execute(array(':idInscript' => $id));
+    return $query;
 }
 
 //Fonction de modification d'un utilisateur
