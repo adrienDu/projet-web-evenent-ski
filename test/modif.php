@@ -1,10 +1,14 @@
 <?php
+require ('traitementModif.php');
 require('../bdd.php');
 include('../head.php');
 
-$data = getUserById($_GET['id']);
+session_start();
+if(empty($_SESSION['id'])){
+// $_SESSION['id']=$_GET['id'];}
+
+$data = getUserById($_SESSION['id']);
 $valeur = $data->fetch();
-//modifyUser($_GET['idInscript'],$_GET['nom'], $_GET['prenom'], $date, $_GET['sexe'], $_GET['mail'], $_GET['tel'], $_GET['rue'], $_GET['CP'], $_GET['ville'], $_GET['glisse'], $_GET['pointure'], $_GET['taille'], $_GET['niveau'], $_GET['etatInscription'], $_GET['dateInscription']);
 ?>
     <!-- CSS -->
     <link rel="stylesheet" href="admin.css" media="all">
@@ -238,4 +242,34 @@ function valueNiveau($niveau)
     if ($niveau == 0) return "debutant";
     else if ($niveau == 1) return "intermediaire";
     else return "expert";
+} ?>
+</html>
+<!-- Sticky Bar Erreur -->
+<?php
+/* Erreur */
+if (isset($_GET['submit'])) {
+    $erreur = validForm();
+    if (!empty($erreur)) {
+        ?>
+        <div class="alert alert-danger" id="stickyErreur">
+            <strong>Error!</strong></br>
+            <a href="#" class="alert-link">
+                <?php
+                for ($i = 0; $i < count($erreur); $i++) {
+                    echo $erreur[$i];
+                }
+                ?>
+            </a>
+        </div>
+        <?php
+    } /* OK */
+    else {
+        ?>
+        <div class="alert alert-success" id="stickyErreur">
+            <strong>Merci de vous être inscrit a notre voyage !</strong></br>
+            <a href="" class="alert-link">
+            </a>
+        </div>
+        <?php
+    }
 } ?>

@@ -49,3 +49,9 @@
 .selectstyle {
     min-width: 150px;
 }
+
+#stickyErreur{
+    position: fixed;
+    top: 0%;
+    width: 100%;
+}
