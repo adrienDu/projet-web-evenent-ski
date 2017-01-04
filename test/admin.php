@@ -122,9 +122,9 @@ session_unset();
                         echo "<td class='tdstyle' id='glisseUser' name='glisse'>" . valueGlisse($donnee['glisse']) . "</td > ";
                         echo "<td class='tdstyle' id='pointureUser' name='pointure'> $donnee[pointure] </td > ";
                         echo "<td class='tdstyle' id='tailleUser' name='taille'> $donnee[taille] </td > ";
-                        echo selectValNiv($donnee['niveau']);
-                        echo "<td class='tdstyle whitefonttdstyle'> " . valueEtatInscr($donnee['etatInscription']) . " <input type = 'text' id='etatInscripUser' name='etatInscription' value = '$donnee[etatInscription] '  style='display:none'></td > ";
-                        echo "<td class='tdstyle whitefonttdstyle'> $donnee[dateInscription] <input name='dateInscrition'type = 'text'  value = '$donnee[etatInscription] ' style='display: none' ></td > ";
+                        echo "<td class='tdstyle' id='niveauUser' name='niveau'>" . valueNiveau($donnee['niveau']) . "</td > ";
+                        echo "<td class='tdstyle'>" . valueEtatInscr($donnee['etatInscription']) . " <input type = 'text' id='etatInscripUser' name='etatInscription' value = '$donnee[etatInscription] '  style='display:none'></td > ";
+                        echo "<td class='tdstyle'> $donnee[dateInscription] <input name='dateInscrition'type = 'text'  value = '$donnee[etatInscription] ' style='display: none' ></td > ";
                         echo "<td class='tdstyle'><a class=\"btn btn-info btn-xs\" href=\"modif.php?id=".$donnee['idInscript']."\"role=\"button\">Modifier</a></td>
                         </form>";
                         echo "</tr>";
@@ -137,51 +137,23 @@ session_unset();
             /*Affichage Homme ou Femme*/
             function valueSexe($sexe)
             {
-                if ($sexe == 0) return "homme";
-                else return "femme";
+                if ($sexe == 0) return "Homme";
+                else return "Femme";
             }
             /*Affichage Ski ou Snow*/
             function valueGlisse($glisse)
             {
-                if ($glisse == 0) return "ski";
-                else return "snow";
+                if ($glisse == 0) return "Ski";
+                else return "Snow";
             }
-            /*Affichage du niveau */
+            /*Affichage du niveau d'un utilisateur (débutant, intermédiaire ou expert) */
             function valueNiveau($niveau)
             {
-                if ($niveau == 0) return "debutant";
-                else if ($niveau == 1) return "intermediaire";
-                else return "expert";
+                if ($niveau == 0) return "Débutant";
+                else if ($niveau == 1) return "Intermediaire";
+                else return "Expert";
             }
-            /*Modification du niveau*/
-            function selectValNiv($niveau)
-            {
-                if ($niveau == 0) {
-                    return "<td class='tdstyle'>
-                            <select class='form-control input-sm selectstyle' id='niveau' name='niveau'>
-                            <option value=$niveau>" . valueNiveau($niveau) . "</option>
-                            <option value=1>Intermediaire</option>
-                            <option value=2>Expert</option>
-                            </select>
-                            </td > ";
-                } else if ($niveau == 1) {
-                    return "<td class='tdstyle'>
-                            <select class='form-control input-sm selectstyle' id='niveau' name='niveau'>
-                            <option value=$niveau>" . valueNiveau($niveau) . "</option>
-                            <option value=0>Debutant</option>
-                            <option value=2>Expert</option>
-                            </select>
-                            </td > ";
-                } else if ($niveau == 2) {
-                    return "<td class='tdstyle'>
-                            <select class='form-control input-sm selectstyle' id='niveau' name='niveau'>
-                            <option value=$niveau>" . valueNiveau($niveau) . "</option>
-                            <option value=0>Debutant</option>
-                            <option value=1>intermediaire</option>
-                            </select>
-                            </td > ";
-                }
-            }
+
             /*Affichage de l'etat d'inscription d'un utilisateur (validé, en attente ou refusé)*/
             function valueEtatInscr($etatInscription)
             {
@@ -189,9 +161,6 @@ session_unset();
                 else if ($etatInscription == 1) return "Validé";
                 else return "Refusé";
             }
-
-            /* Fonction de modification d'un utilisateur validé ou en attente*/
-
             ?>
             </table>
             <!-- Fin div background -->

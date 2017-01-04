@@ -155,7 +155,8 @@ $valeur = $data->fetch();
                     <div class="col-xs-12">
                         <div class="form-group">
                             <label class="intform">Niveau :</label>
-                            <?php echo selectValNiv($valeur['niveau']); ?>
+                            <?php echo
+                            selectValNiv($valeur['niveau']); ?>
                         </div>
                     </div>
 
@@ -191,18 +192,6 @@ function valueGlisse($glisse)
 {
     if ($glisse == 0) return "ski";
     else return "snow";
-}
-
-/*Modification de la pointure*/
-function selectValPoint($pointure)
-{
-
-}
-
-/*Modification de la taille*/
-function selectValTaille($taille)
-{
-
 }
 
 /*Modification du niveau*/
