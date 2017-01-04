@@ -19,12 +19,12 @@ session_unset();
             $data = getAllWaiting();
             $res = $data->rowCount();
             if ($res == 0){
-                echo "<h1 class='title1'>Aucun utilisateur en attente</h1>";
+                echo "<h2 class='stitle1'>Aucun utilisateur en attente</h2>";
             }
             else{
             ?>
             <!-- Tableau des utilisateurs en attende de validation -->
-            <h1 class="title1">Utilisateurs en attente</h1>
+            <h2 class="stitle1">Utilisateurs en attente</h2>
             <figure class="formblock">
                 <div class="table-responsive">
                     <table class="table table-condensed table-hover tablestyle">
@@ -79,7 +79,7 @@ session_unset();
             </figure>
 
             <!-- Tableau de tous les utilisateurs -->
-            <h1 class="title1">Tous les utilisateurs</h1>
+            <h2 class="stitle1">Tous les utilisateurs</h2>
             <?php
             $data = getAll(); ?>
             <figure class="formblock">
