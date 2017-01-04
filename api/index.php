@@ -2,7 +2,7 @@
 require_once '../bdd.php';
 require_once '../vendor/autoload.php';
 
-// init Silex app
+// intialisation de Silex app
 $app = new Silex\Application();
 
 //connection a la base de données
@@ -97,11 +97,8 @@ $app->put('/users/{id}/refuse', function ($id) use ($app) {
     }
 });
 
-//route pour creer un utilisateur
-$app->post('/creer/{$nom}{$prenom}{dateNais}{sexe}{mail}{tel}{rue}{CP}{ville}{glisse}{pointure}{taille}{niveau}',function($nom,$prenom,$dateNais,$sexe,$mail,$tel,$rue,$CP,$ville,$glisse,$pointure,$taille,$niveau) use ($app) {
-    $app['debug'] = true;
+$app->post('/create/{nom}&{prenom}&{date}&{sexe}&{mail}&{tel}&{rue}&{CP}&{ville}&{glisse}&{pointure}&{taille}&{niveau}', function ($nom, $prenom, $date, $sexe, $mail, $tel, $rue, $CP, $ville, $glisse, $pointure, $taille, $niveau) use ($app) {
     $id = uuid();
-
     //creation de la date du jour
     $dateInscription = date("Y-m-d");
     //etatInscription
@@ -110,7 +107,7 @@ $app->post('/creer/{$nom}{$prenom}{dateNais}{sexe}{mail}{tel}{rue}{CP}{ville}{gl
         'idInscript' => $id,
         'nom' => $nom,
         'prenom' => $prenom,
-        'dateNais' => $dateNais,
+        'dateNais' => $date,
         'sexe' => $sexe,
         'mail' => $mail,
         'tel' => $tel,
@@ -122,13 +119,10 @@ $app->post('/creer/{$nom}{$prenom}{dateNais}{sexe}{mail}{tel}{rue}{CP}{ville}{gl
         'taille' => $taille,
         'niveau' => $niveau,
         'etatInscription' => $etatInscription,
-        'dateInscription' => $dateInscription
+        'dateInscription' => $dateInscription,
     );
-
     $app['db']->insert('inscription', $user);
-    $userid = $app->json($user);
-
-    return "inscription".$app['db']->lastinsertId()."effectue avec succée<br> $userid";
+    return "id inscrit : " . $id;
 
 
 });
@@ -141,7 +135,7 @@ $app->get('/', function () {
   - /users/accepted : renvois une liste de tous les utilisateurs validé;
   - /users/refused : renvois une liste de tous les utilisateurs refusé;
   - /users/{id} : renvois les informations de l'utilisateur et retourne un 204 si il n'existe pas;
-  
+  - /create/{nom}&{prenom}&{date}&{sexe}&{mail}&{tel}&{rue}&{CP}&{ville}&{glisse}&{pointure}&{taille}&{niveau} cree un utilisateur  
   ";
 });
 
