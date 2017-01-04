@@ -1,6 +1,8 @@
 <?php
 require('../bdd.php');
 include('../head.php');
+
+session_unset();
 ?>
 <!-- CSS -->
 <link rel="stylesheet" href="admin.css" media="all">

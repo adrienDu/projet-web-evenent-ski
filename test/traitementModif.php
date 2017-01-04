@@ -12,7 +12,7 @@ function validForm()
     $erreurs = array();
 
     /* Si tous les champs sont vides */
-    if (empty($_GET['nom']) || empty($_GET['prenom']) || empty($_GET['jour']) || empty($_GET['mois']) || empty($_GET['annee'])
+    if (empty($_GET['nom'])|| empty($_GET['prenom']) || empty($_GET['date'])
         || empty($_GET['mail']) || empty($_GET['tel']) || empty($_GET['rue']) || empty($_GET['cp'])
         || empty($_GET['ville']) || empty($_GET['pointure']) || empty($_GET['taille'])
     ) {
@@ -24,7 +24,7 @@ function validForm()
             array_push($erreurs, "- Les noms ou prenoms saisis ne sont pas valides");
         } /*Vérification date de naissance*/
         else {
-            $nais = verifDate($_GET['jour'], $_GET['mois'], $_GET['annee']);
+            $nais = verifDate($_GET['date']);
             if (!empty($nais)) {
                 array_push($erreurs, $nais);
             } /*Vérification Sexe*/
@@ -36,9 +36,7 @@ function validForm()
                     if (!filter_var($_GET['mail'], FILTER_VALIDATE_EMAIL)) {
                         array_push($erreurs, "- L'adresse mail saisie n'est pas valide");
                     }
-                    if (checkmail($_GET['mail'])) {
-                        array_push($erreurs, "- L'adresse email entrée existe déjà");
-                    } /* Vérification Telephone*/
+                     /* Vérification Telephone*/
                     else {
                         if (!preg_match("#^0[1-8]([-. ]?[0-9]{2}){4}$#", $_GET['tel']) || strlen($_GET['tel']) != 10) {
                             array_push($erreurs, "- Le numéro de téléphone saisi n'est pas valide");
@@ -66,8 +64,8 @@ function validForm()
 
                                             } /* Validation des données*/
                                             else {
-                                                $date = $_GET['annee'] . "-" . $_GET['mois'] . "-" . $_GET['jour'];
-                                                modifyUser($_GET['id'],$_GET['nom'], $_GET['prenom'], $date, $_GET['sexe'], $_GET['mail'], $_GET['tel'], $_GET['rue'], $_GET['cp'], $_GET['ville'], $_GET['glisse'], $_GET['pointure'], $_GET['taille'], $_GET['niveau']);
+
+                                                modifyUser($_GET['id'],$_GET['nom'], $_GET['prenom'], $_GET['date'], $_GET['sexe'], $_GET['mail'], $_GET['tel'], $_GET['rue'], $_GET['cp'], $_GET['ville'], $_GET['glisse'], $_GET['pointure'], $_GET['taille'], $_GET['niveau'], $_GET);
                                             }
                                         }
 
@@ -85,8 +83,13 @@ function validForm()
 }
 
 /*Fonction de vérification du format de la date*/
-function verifDate($j, $m, $a)
+function verifDate($datee)
 {
+   $dateSep = explode("-",$datee);
+
+   $a = $dateSep[0];
+   $m = $dateSep[1];
+   $j = $dateSep[2];
     if (checkdate($m, $j, $a)) {
         return verifAge($a);
     } else {
