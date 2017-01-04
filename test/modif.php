@@ -132,35 +132,35 @@ $valeur = $data->fetch();
 
                     <!— Pointure —>
                     <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="intform" for="pointure">Pointure :</label>
-                        <select class="form-control" id="pointure" name="pointure">
-                            <?php echo "<option value='$valeur[pointure]'>$valeur[pointure]</option>";
-                            valuePointure($valeur['pointure']);
-                            ?>
+                        <div class="form-group">
+                            <label class="intform" for="pointure">Pointure :</label>
+                            <select class="form-control" id="pointure" name="pointure">
+                                <?php echo "<option value='$valeur[pointure]'>$valeur[pointure]</option>";
+                                valuePointure($valeur['pointure']);
+                                ?>
 
-                        </select>
-                    </div>
+                            </select>
+                        </div>
                     </div>
 
                     <!— Taille-->
                     <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="intform" for="taille">Taille :</label>
-                        <select class="form-control" id="taille" name="taille">
-                            <?php echo "<option value='$valeur[taille]'>$valeur[taille] cm</option>";
-                            valueTaille($valeur['taille']); ?>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label class="intform" for="taille">Taille :</label>
+                            <select class="form-control" id="taille" name="taille">
+                                <?php echo "<option value='$valeur[taille]'>$valeur[taille] cm</option>";
+                                valueTaille($valeur['taille']); ?>
+                            </select>
+                        </div>
                     </div>
 
                     <!— Niveau —>
                     <div class="col-xs-12">
-                    <div class="form-group">
-                        <label class="intform">Niveau :</label>
-                        <?php echo
-                        selectValNiv($valeur['niveau']); ?>
-                    </div>
+                        <div class="form-group">
+                            <label class="intform">Niveau :</label>
+                            <?php echo
+                            selectValNiv($valeur['niveau']); ?>
+                        </div>
                     </div>
 
                     <?php echo "<input style='display: none' name='id' value='$_SESSION[id]'>"; ?>
