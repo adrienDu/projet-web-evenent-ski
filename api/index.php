@@ -98,7 +98,7 @@ $app->put('/users/{id}/refuse', function ($id) use ($app) {
 });
 
 //route pour creer un utilisateur
-$app->post('/creer',function(Request $request) use ($app) {
+$app->post('/creer/{$nom}{$prenom}{dateNais}{sexe}{mail}{tel}{rue}{CP}{ville}{glisse}{pointure}{taille}{niveau}',function($nom,$prenom,$dateNais,$sexe,$mail,$tel,$rue,$CP,$ville,$glisse,$pointure,$taille,$niveau) use ($app) {
     $app['debug'] = true;
     $id = uuid();
 
@@ -108,19 +108,19 @@ $app->post('/creer',function(Request $request) use ($app) {
     $etatInscription = 0;
     $user = array(
         'idInscript' => $id,
-        'nom' => $request->get('nom'),
-        'prenom' => $request->get('prenom'),
-        'dateNais' => $request->get('dateNais'),
-        'sexe' => $request->get('sexe'),
-        'mail' => $request->get('mail'),
-        'tel' => $request->get('tel'),
-        'rue' => $request->get('rue'),
-        'CP' => $request->get('CP'),
-        'ville' => $request->get('ville'),
-        'glisse' => $request->get('glisse'),
-        'pointure' => $request->get('pointure'),
-        'taille' => $request->get('taille'),
-        'niveau' => $request->get('niveau'),
+        'nom' => $nom,
+        'prenom' => $prenom,
+        'dateNais' => $dateNais,
+        'sexe' => $sexe,
+        'mail' => $mail,
+        'tel' => $tel,
+        'rue' => $rue,
+        'CP' => $CP,
+        'ville' => $ville,
+        'glisse' => $glisse,
+        'pointure' => $pointure,
+        'taille' => $taille,
+        'niveau' => $niveau,
         'etatInscription' => $etatInscription,
         'dateInscription' => $dateInscription
     );
