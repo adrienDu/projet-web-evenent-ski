@@ -129,13 +129,13 @@ $app->post('/create/{nom}&{prenom}&{date}&{sexe}&{mail}&{tel}&{rue}&{CP}&{ville}
 
 // default route
 $app->get('/', function () {
-    return "List of avaiable methods:
-  - /users - renvois une liste de tous les utilisateurs;
-  - /users/waiting : renvois une liste de tous les utilisateurs en attente de validation;
-  - /users/accepted : renvois une liste de tous les utilisateurs validé;
-  - /users/refused : renvois une liste de tous les utilisateurs refusé;
-  - /users/{id} : renvois les informations de l'utilisateur et retourne un 204 si il n'existe pas;
-  - /create/{nom}&{prenom}&{date}&{sexe}&{mail}&{tel}&{rue}&{CP}&{ville}&{glisse}&{pointure}&{taille}&{niveau} cree un utilisateur  
+    return "Liste des méthodes disponibles:
+  - /users - renvoi une liste de tous les utilisateurs;
+  - /users/waiting : renvoi une liste de tous les utilisateurs en attente de validation;
+  - /users/accepted : renvoi une liste de tous les utilisateurs validés;
+  - /users/refused : renvoi une liste de tous les utilisateurs refusés;
+  - /users/{id} : renvoi les informations de l'utilisateur et retourne une erreur 204 si il n'existe pas;
+  - /create/{nom}&{prenom}&{date}&{sexe}&{mail}&{tel}&{rue}&{CP}&{ville}&{glisse}&{pointure}&{taille}&{niveau} créé un utilisateur  
   ";
 });
 

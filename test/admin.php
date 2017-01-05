@@ -68,7 +68,7 @@ session_unset();
                             echo "<td class='tdstyle'>" . valueNiveau($donnee['niveau']) . "</td>";
                             echo "<td style='display: none'>" . valueEtatInscr($donnee['etatInscription']) . "</td>";
                             echo "<td class='tdstyle'> $donnee[dateInscription]</td>";
-                            echo "<td class='tdstyle'><a class=\"btn btn-success btn-xs\" href=\"acceptUser.php?id=" . $donnee['idInscript'] . "\"role=\"button\">Accept</a>
+                            echo "<td class='tdstyle'><a class=\"btn btn-success btn-xs\" href=\"acceptUser.php?id=" . $donnee['idInscript'] . "\"role=\"button\">Accepter</a>
                         <a class=\"btn btn-danger btn-xs\" href=\"refuseUser.php?id=" . $donnee['idInscript'] . "\"role=\"button\">Refuser</a>";
                             echo "</tr>";
                         }
@@ -103,7 +103,7 @@ session_unset();
                             <th class="thstyle">Niveau</th>
                             <th class="thstyle">Etat de l'inscription</th>
                             <th class="thstyle">Date d'inscription</th>
-                            <th class="thstyle">Actions</th>
+                            <th class="thstyle">Action</th>
                         </tr>
                         </thead>
                         <!-- Remplissage du tabeau -->

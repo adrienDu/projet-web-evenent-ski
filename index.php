@@ -12,7 +12,7 @@ include('head.php');
                     <h1 id="nom-home">Voyage au ski 2017</h1>
                     <p id="desc-home">Pour l'édition 2017 du voyage Ski, nous vous embarquons sur les pistes du Val
                         d'Arly en Haute Savoie.
-                        Au programme : ski, snow, fun, bierres et raclettes !!</p>
+                        Au programme : ski, snow, fun, bières et raclettes !!</p>
                 </div>
                 <!-- fin row-->
             </div>
@@ -80,13 +80,13 @@ include('head.php');
                         <li>Rendez-vous à 7h00 à Opéra (côté de l'Apple Store Opéra).</li>
                         <li>Départ 7h30</li>
                         <li>Arrivée à Praz Sur Arly vers 16h</li>
-                        <li>Dinner vers 20h</li>
+                        <li>Dîner vers 20h</li>
                     </ul>
                     <!-- J2 -->
                     <h3 class="title-plan">Jour 2</h3>
                     <ul class="desc-plan">
                         <li>9h30 : Rendez-vous pour récuppérer chaussures, skis et snow</li>
-                        <li>Découverte du domaine avec pique nique sur les pistes le midi.</li>
+                        <li>Découverte du domaine avec pique-nique sur les pistes le midi.</li>
                         <li>Soirée raclette à 20h30 !</li>
                     </ul>
                     <!-- J3 -->
@@ -94,7 +94,7 @@ include('head.php');
                     <ul class="desc-plan">
                         <li>9h30 : Rendez-vous sur les pistes</li>
                         <li>12h30 : Retour au chalet pour manger</li>
-                        <li>Après midi libre</li>
+                        <li>Après-midi libre</li>
                         <li>Soirée fondue à 20h30 !</li>
                     </ul>
                 </div>
@@ -104,7 +104,7 @@ include('head.php');
                     <ul class="desc-plan">
                         <li>9h30 : Rendez-vous sur les pistes</li>
                         <li>12h30 : Retour au chalet pour manger</li>
-                        <li>Après midi patin à glasse à la patinoire de Mégève.</li>
+                        <li>Après-midi patin à glace à la patinoire de Mégève.</li>
                         <li>Soirée tartiflette à 20h30 !</li>
                     </ul>
                     <!-- J5 -->
@@ -113,14 +113,14 @@ include('head.php');
                         <li>9h30 : Rendez-vous sur les pistes</li>
                         <li>12h30 : Retour au chalet pour manger</li>
                         <li>Après-midi ski and snow !</li>
-                        <li>Dinner à 20h00</li>
+                        <li>Dîner à 20h00</li>
                         <li>Soirée descente aux flambeaux</li>
                     </ul>
                     <!-- J6 -->
                     <h3 class="title-plan">Jour 6</h3>
                     <ul class="desc-plan">
                         <li>9h30 : Rendez-vous sur les pistes</li>
-                        <li>Pique nique sur les pistes vers 12h</li>
+                        <li>Pique-nique sur les pistes vers 12h</li>
                         <li>17h30 : Rendez-vous à la loc de ski pour le retour du matériel</li>
                         <li>Soirée raclette, le retour à 20h30 !</li>
                     </ul>

@@ -13,10 +13,10 @@ $boolErr = false;
             <p class="presform"> Afin de nous rejoindre dans ce magnifique voyage au ski, nous aurions besoin de
                 quelques informations
                 sur
-                toi. Merci de prendre le temps de remplir ce formulaire, tu recevera un mail de confirmation avec toutes
+                toi. Merci de prendre le temps de remplir ce formulaire, tu receveras un mail de confirmation avec toutes
                 les
-                infos necessaires.</p>
-            <h2 class="presform">Pour commencer on a besoin de savoir qui tu es :</h2>
+                infos nécessaires.</p>
+            <h2 class="presform">Pour commencer, on a besoin de savoir qui tu es :</h2>
 
             <!-- Formulaire -->
             <div class="styleform">
@@ -24,7 +24,7 @@ $boolErr = false;
                     <!— Nom —>
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label class="intform" for="nom">Ton Nom :</label>
+                            <label class="intform" for="nom">Nom :</label>
                             <input type="text" class="form-control" id="nom" name="nom">
                         </div>
                     </div>
@@ -39,8 +39,8 @@ $boolErr = false;
 
                     <!— Date naissance —>
                     <div class="col-xs-12">
-                        <label class="intform">Ta date de naissance (seules les personnes majeures
-                            peuvent se joindre a l'aventure) :</label>
+                        <label class="intform">Date de naissance (seules les personnes majeures
+                            peuvent se joindre à l'aventure) :</label>
                         <!-- Jour de naissance -->
                         <div class="form-inline" style="margin-top: 10px; margin-left: 15px; margin-bottom: 15px">
                             <label class="intform" for=""> Jour :</label>
@@ -139,7 +139,7 @@ $boolErr = false;
                     <!— Tel —>
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label class="intform" for="tel">Telephone :</label>
+                            <label class="intform" for="tel">Téléphone :</label>
                             <input type="tel" class="form-control" id="tel" name="tel">
                         </div>
                     </div>
@@ -155,7 +155,7 @@ $boolErr = false;
                     <!— CP-->
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label class="intform" for="cp">Code postale :</label>
+                            <label class="intform" for="cp">Code postal :</label>
                             <input type="text" class="form-control" id="cp" name="cp">
                         </div>
                     </div>
@@ -260,7 +260,7 @@ if (isset($_GET['submit'])) {
     if (!empty($erreur)) {
         ?>
         <div class="alert alert-danger" id="stickyErreur">
-            <strong>Error!</strong></br>
+            <strong>Erreur!</strong></br>
             <a href="#" class="alert-link">
                 <?php
                 for ($i = 0; $i < count($erreur); $i++) {
@@ -274,7 +274,7 @@ if (isset($_GET['submit'])) {
     else {
         ?>
         <div class="alert alert-success" id="stickyErreur">
-            <strong>Merci de vous être inscrit a notre voyage !</strong></br>
+            <strong>Merci de t'être inscrit à notre voyage !</strong></br>
             <a href="" class="alert-link">
             </a>
         </div>

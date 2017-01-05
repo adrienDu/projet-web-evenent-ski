@@ -28,7 +28,7 @@ $valeur = $data->fetch();
                     <!— Nom —>
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label class="intform" for="nom">Ton Nom :</label>
+                            <label class="intform" for="nom">Nom :</label>
                             <?php echo "<input type='text' class='form-control' id='nom' name='nom' value='$valeur[nom]'>"; ?>
                         </div>
                     </div>
@@ -36,7 +36,7 @@ $valeur = $data->fetch();
                     <!— Prenom —>
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label class="intform" for="prenom">Prenom :</label>
+                            <label class="intform" for="prenom">Prénom :</label>
                             <?php echo "<input type='text' class='form-control' id='prenom' name='prenom' value='$valeur[prenom]'>"; ?>
                         </div>
                     </div>
@@ -81,7 +81,7 @@ $valeur = $data->fetch();
                     <!— Tel —>
                     <div class="col-xs-12">
                         <div class="form-group">
-                            <label class="intform" for="tel">Telephone :</label>
+                            <label class="intform" for="tel">Téléphone :</label>
                             <?php echo "<input type='text' class='form-control' id='tel' name='tel' value='0$valeur[tel]'>"; ?>
                         </div>
                     </div>

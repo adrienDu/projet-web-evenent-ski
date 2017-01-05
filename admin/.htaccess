@@ -1,4 +1,4 @@
 AuthName "Page d'administration protégée, veuillez vous identifier"
-AuthType none
+AuthType Basic
 AuthUserFile "/opt/lampp/htdocs/projet-web-evenent-ski/admin/.htpasswd"
 Require valid-useradmin
